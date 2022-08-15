@@ -35,8 +35,8 @@ Fridays 10:20am-12:15pm, Ballantine Hall 118.
 
 **Slack (communicating with instructors and other students)**
 
-[Workspace](https://h343datastruc-yln1475.slack.com)
- ([signup](https://join.slack.com/t/indiana-izt3285/shared_invite/zt-ucnml3au-jps1wf8czRc0iNM_1khQ5g))
+[Workspace](https://h343datastruc-h256084.slack.com)
+ ([signup](https://join.slack.com/t/h343datastruc-h256084/shared_invite/zt-1e7jf70gm-~sf6Fcc~0waqxHsdF1qSCg))
 
 **Schedule**
 
