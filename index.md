@@ -41,7 +41,7 @@ Fridays 10:20am-12:15pm, Ballantine Hall 118.
 **Schedule**
 
 Day     | Lecture Topic         | Reading Due    | Assignment Due
-Aug. 22 | Introduction |   |
+Aug. 22 | [Introduction](./lectures/Aug-22.md) |   |
 Aug. 24 | Arrays, Rotation, Correctness | Ch. 1 | 
 Aug. 26 |                       |                | Lab: Array Search
 Aug. 29 | Code Review & Algorithm Analysis | Ch. 2 |
