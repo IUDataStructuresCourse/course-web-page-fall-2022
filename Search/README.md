@@ -4,6 +4,11 @@ This lab is about implementing functions that search for things
 in arrays. Create a file named `Search.java` containing
 a public class, also named `Search`.
 
+When your lab is complete, submit your `Search.java` file to the
+autograder
+[Search]([submit](https://autograder.luddy.indiana.edu/web/project/461))
+project.
+
 ## Linear Search on an Array of Booleans
 
 The most basic but surprisingly useful search function involves an
