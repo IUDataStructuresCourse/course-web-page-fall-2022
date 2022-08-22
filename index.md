@@ -43,7 +43,7 @@ Fridays 10:20am-12:15pm, Ballantine Hall 118.
 Day     | Lecture Topic         | Reading Due    | Assignment Due
 Aug. 22 | [Introduction](./lectures/Aug-22.md) |   |
 Aug. 24 | Arrays, Rotation, Correctness | Ch. 1 | 
-Aug. 26 |                       |                | Lab: Array [Search](./Search/README.md)
+Aug. 26 |                       |                | Lab: Array [Search](./Search/README.md) [submit](https://autograder.luddy.indiana.edu/web/project/461)
 Aug. 29 | Code Review & Algorithm Analysis | Ch. 2 |
 Aug. 31  | Algo. Analysis cont'd |                |
 Sep. 2  |                       |                | Project: Flood it!
