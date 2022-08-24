@@ -89,7 +89,8 @@ Rotation is used in
 * Student exercise (5 minutes)
 
     Write down an algorithm for rotation.
-	Apply the algorithm to the array, showing the array after each loop iteration.
+	Apply the algorithm to the array, showing the array after each
+    loop iteration.
 	
 	    [1,2,3,4,5]
 
@@ -142,16 +143,6 @@ Rotation is used in
                 }
             }
         
-    * Ripple from end
-    
-            [1,2,3,4,5]
-            [1,2,3,4,-],5
-            [5,2,3,4,-],1
-            [5,1,3,4,-],2
-            [5,1,2,4,-],3
-            [5,1,2,3,-],4
-            [5,1,2,3,4]
-        
     * Ripple from start by swapping with A[0]
       
                                [1,2,3,4,5]
@@ -178,26 +169,9 @@ Rotation is used in
                 }
             }
         
-    * Ripple from end swapping with A[4]
-    
-            [1,2,3,4,5]        [1,2,3,4,-],5
-            [5,2,3,4,1]        [5,2,3,4,-],1
-            [5,1,3,4,2]        [5,1,3,4,-],2
-            [5,1,2,4,3]        [5,1,2,4,-],3
-            [5,1,2,3,4]        [5,1,2,3,-],4
-                               [5,1,2,3,4]
-
-            static void rotate_1_ripple_swap_end(int[] A) {
-                if (A.length > 1) {
-                    for (int i = 0; i != A.length - 1; ++i) {
-                        swap(A, A.length - 1, i);
-                    }
-                }
-            }
-
     * Swap backwards
 
-      Swap the last two numbers, move to one the left and swap those two, etc.
+      Swap the last two numbers, move one to the left and swap those two, etc.
 
             [1,2,3,4,5]
             [1,2,3,5,4]
@@ -213,24 +187,6 @@ Rotation is used in
                 }
             }
         
-    * Rotation by 1 to the left, Swap forwards
-
-      Same idea, but going forwards.
-      
-            [1,2,3,4,5]
-            [2,1,3,4,5]
-            [2,3,1,4,5]
-            [2,3,4,1,5]
-            [2,3,4,5,1]
-            
-            static void rotate_1_swap_fwd(int[] A) {
-                if (A.length > 1) {
-                    for (int i=0; i != A.length - 1; ++i) {
-                        swap(A, i, i+1);
-                    }
-                }
-            }
-
 ## Correctness
 
 We'll focus on the swap-backwards algorithm, expressed below as a
@@ -284,8 +240,8 @@ that stays the same.
 
 Let's watch the algorithm in action to see if we can see some patterns
 from which we can create the loop invariant. The `while` loop is
-controled by variable `i`, so we draw a vertical line just before the
-element at the index i. The loop invariant will need to relate the
+controled by variable `i`, so let's draw a vertical line just before
+the element at the index i. The loop invariant will need to relate the
 current state of the array to it's original state, so we'll write down
 both at each iteration of the loop:
 
@@ -296,7 +252,7 @@ both at each iteration of the loop:
     A:      1 2 3 | 5 4
 	
     A_orig: 1 2 | 3 4 5
-    A:      1 2 | 5 2 4
+    A:      1 2 | 5 3 4
 	
     A_orig: 1 | 2 3 4 5
     A:      1 | 5 2 3 4
@@ -304,13 +260,12 @@ both at each iteration of the loop:
     A_orig: | 1 2 3 4 5
     A_:     | 5 1 2 3 4
 
-Looking at the above, let's first focus on the front part of the
-array, the elements before the line. There's an easy pattern: the
-elements in the front part of A are the same as those in the front
-part of A_orig.
+Looking at the above, let's focus on the front part of the array, the
+elements before the line. There's an easy pattern: the elements in the
+front part of A are the same as those in the front part of A_orig.
 
 What about the back part, i.e. the elements after the line? The back
-part of A is the rotated version of the back part of A_orig.
+part of A is the rotated version of the back part of A_orig!
 
 We write down the loop invariant as another function:
 
@@ -324,7 +279,7 @@ static boolean loop_invariant_rotate_bkwd(int[] A_orig, int[] A, int i) {
 ```
 
 Now that we've identified a loop invariant, we need to check that it
-really is an appropriate loop invarient for this algorithm.
+really is an appropriate loop invariant for this algorithm.
 
 1. show that the loop invariant is true before the start of the loop
 2. show that the loop invariant is true at the end of the loop body,
