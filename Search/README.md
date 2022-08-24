@@ -6,7 +6,7 @@ a public class, also named `Search`.
 
 When your lab is complete, submit your `Search.java` file to the
 autograder
-[Search]([submit](https://autograder.luddy.indiana.edu/web/project/461))
+[Search](https://autograder.luddy.indiana.edu/web/project/461)
 project.
 
 ## Linear Search on an Array of Booleans
