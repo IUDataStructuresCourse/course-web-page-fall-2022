@@ -47,7 +47,7 @@ Aug. 24 | [Arrays, Rotation, Correctness](./lectures/Aug-24.md) | Ch. 1 |
 Aug. 26 |                       |                | Lab: Array [Search](./Search/README.md) [submit](https://autograder.luddy.indiana.edu/web/project/461)
 Aug. 29 | [Code Review & Algorithm Analysis](./lectures/Aug-29.md) | Ch. 2 |
 Aug. 31  | Algo. Analysis cont'd |                |
-Sep. 2  |                       |                | [Project: Flood it!](./FloodIt/README.md) [submit](https://autograder.luddy.indiana.edu/web/project/456)
+Sep. 2  |                       |                | Project: [Flood It!](./FloodIt/README.md) [submit](https://autograder.luddy.indiana.edu/web/project/456)
 Sep. 5  | Labor Day             |                |
 
 **Resources**
