@@ -21,7 +21,11 @@ Your Task
 ---------
 
 We have written most of the game but we need your help in finishing
-it. We would like you to write the `flood` function in the
+it. The source code is in this zip file:
+
+[floodit.zip](./FloodIt/floodit.zip)
+
+We would like you to write the `flood` function in the
 `Flood` class. The `flood` function takes four parameters:
 
 * `color` - the color that the play just selected.
