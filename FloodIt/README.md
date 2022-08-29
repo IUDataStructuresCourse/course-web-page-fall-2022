@@ -59,7 +59,7 @@ coordinates.
 
 An X-colored region is a set of tiles defined as follows:
 * A tile of color X is an X-colored region.
-* If tile $T$ is color X and adjacent to
+* If tile T is color X and adjacent to
   a tile in an X-colored region R, then the union of T and R
    is an X-colored region.
 
