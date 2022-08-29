@@ -14,16 +14,16 @@ playing the game so that you can develop an intuition for how it works
 and formulate strategies for game play before trying to implement
 anything. There is an online version at the following URL:
 
-http://unixpapa.com/floodit
+[http://unixpapa.com/floodit](http://unixpapa.com/floodit)
 
 
 Your Task
 ---------
 
 We have written most of the game but we need your help in finishing
-it. The source code is in this zip file:
+it. The source code for the game is in the following zip file:
 
-[floodit.zip](./FloodIt/floodit.zip)
+[floodit.zip](./floodit.zip)
 
 We would like you to write the `flood` function in the
 `Flood` class. The `flood` function takes four parameters:
