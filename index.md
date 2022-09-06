@@ -50,7 +50,7 @@ Aug. 31  | [Algo. Analysis cont'd](./lectures/Aug-31.md) |    |
 Sep. 2  |                       |                | Project: [Flood It!](./FloodIt/README.md) [submit](https://autograder.luddy.indiana.edu/web/project/456)
 Sep. 5  | Labor Day             |                |
 Sep. 7  | Linked Lists | Ch. 3 sec. 1-5 | [Homework 1](./HW1.md)
-Sep. 9  |              |                | Lab: Merge Sort on Linked List
+Sep. 9  |              |                | Lab: [Merge Sort](./MergeSortList/README.md) on Linked List [submit](https://autograder.luddy.indiana.edu/web/project/509)
 
 **Resources**
 
