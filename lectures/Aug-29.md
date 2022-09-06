@@ -10,13 +10,11 @@ Student solutions.
 #### Solution #1
 
     public static int find_first_true(boolean[] A, int begin, int end){
-        if (A.length >= 1) {
-            for (int i = begin; i != end; i++) {
-                if (A[i] == true) {
-                    return i;
-                }
-            }
-        }
+		for (int i = begin; i != end; i++) {
+			if (A[i]) {
+				return i;
+			}
+		}
         return end;
     }
 
@@ -39,8 +37,8 @@ Notes:
 #### Solution #3
 
     public static int find_first_true(boolean[] A, int begin, int end) {
-        for(int i=begin;i!=end;i++) {
-            if(A[i]) {
+        for (int i = begin; i != end; i++) {
+            if (A[i]) {
                 return i;
             }
         }
@@ -69,12 +67,7 @@ Student solutions.
     public static int find_first_equal(int[] A, int x) {
         boolean[] newArr = new boolean[A.length];
         for (int i = 0; i < A.length; i++) {
-            if (A[i] == x) {
-                newArr[i] = true;
-            }
-            else {
-                newArr[i] = false;
-            }
+            newArr[i] = (A[i] == x);
         }
         return find_first_true(newArr, 0, A.length);
     }
@@ -157,7 +150,7 @@ Student solutions.
             if(A[mid]) {
                 end = mid;
             } else {
-                begin = mid;
+                begin = mid + 1;
             }
         }
         if (A[begin]) 
@@ -170,21 +163,15 @@ Student solutions.
 #### Solution #4
 
     public static int find_first_true_sorted(boolean[] A, int begin, int end) {
-		if(A.length == 0) {
-			return 0;
-		}
-		if(end-begin == 1) {
-			if(A[begin]) {
-				return begin;
-			} else {
-				return begin + 1;
-			}
-		}
-		int middle = (int) Math.floor((end-begin)/2) + begin;
-		if(A[middle]) {
-			return find_first_true_sorted(A, begin, middle);
+		if(end - begin == 0) {
+			return end;
 		} else {
-			return find_first_true_sorted(A, middle, end);
+			int middle = (end-begin)/2 + begin;
+			if(A[middle]) {
+				return find_first_true_sorted(A, begin, middle);
+			} else {
+				return find_first_true_sorted(A, middle+1, end);
+			}
 		}
 	}
 
