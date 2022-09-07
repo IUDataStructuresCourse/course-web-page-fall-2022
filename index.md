@@ -27,8 +27,8 @@ Fridays 10:20am-12:15pm, Ballantine Hall 118.
 
 **Instructors and Office Hours**
 
-* Jeremy Siek (jsiek), office hours: Wenesdays 2:30pm-3:30pm, Thursdays 4:30pm-5:30pm, in Luddy 3014 (or nearby).
-* Brooke Augustine (bsaugust), office hours: TBD
+* Jeremy Siek (jsiek), office hours: Wenesdays 2:30pm-3:30pm, Thursdays 4:30pm-5:30pm, in Luddy 3014.
+* Brooke Augustine (bsaugust), office hours: Mondays 4-5pm, Wednesdays 12-1pm, in Luddy 3014.
 
 **Textbook**
 
