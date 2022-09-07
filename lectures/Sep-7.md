@@ -32,7 +32,7 @@ waste of space
 
 time complexity is O(n)
 
-Solution: linked structures
+Alternative: linked structures
 
     array:
     [1|2|3|4] 
@@ -207,18 +207,6 @@ Here's the code for the A-A combination
 
 Student in-class exercise: implement the SL-A version (without iterators).
 
-Solution:
-
-    public boolean equals(LinkedList<T> L, T other[]) {
-            int j = 0;
-            for (Node<T> i = L.head; i != null; i = i.next) {
-                if (j == other.length || i.data != other[j])
-                            return false;
-                    ++j;
-            }
-            return j == other.length;
-     }
-
 *Abstraction* is the act of removing characteristics that are not
 relevant to your immediate purpose while retaining the characteristics
 that are necessary.
@@ -262,40 +250,7 @@ Here's what you need to know about `BiPredicate`:
 	    boolean test(T t, U u); // Evaluates this predicate on the given arguments.
 	}
 
-Solution:
-
-    public static <T> T max(Sequence<T> s, T zero, BiPredicate<T, T> less) {
-		T m = zero;
-		for (Iter<T> i = s.begin(); !i.equals(s.end()); i.advance()) {
-			T c = i.get();
-			if (less.test(m, c))
-			    m = c;
-		}
-		return m;
-    }
-
 Student in-class exercise: implement Sequence using an array
-
-Solution:
-
-    class Array<T> implements Sequence<T> {
-        T[] data;
-        public Array(T[] a) { data = a; }
-		
-        public class ArrayIter implements Iter<T> {
-			int pos;
-			ArrayIter(int p) { pos = p; }
-			public T get() { return data[pos]; }
-			public void advance() { ++pos; }
-			public Iter<T> clone() { return new ArrayIter(pos); }
-			public boolean equals(Iter<T> other) { 
-				return pos == ((ArrayIter)other).pos; 
-			}
-        }
-		
-        public Iter<T> begin() { return new ArrayIter(0); }
-        public Iter<T> end() { return new ArrayIter(data.length); }
-    }
 
 Now the algorithms on `Sequence` (`find_first_equal`, `equals`, etc.)  can
 also be used with Array!
@@ -309,3 +264,5 @@ also be used with Array!
 
     Iter<Integer> i = find_first_equal(B, 30);
     assert i == B.end();
+
+The solutions to the in-class exercises are [here](./Sep-7-solutions.md).
