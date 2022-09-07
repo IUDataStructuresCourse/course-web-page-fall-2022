@@ -17,7 +17,7 @@ Submit your homework solution on Canvas (as text file, pdf, etc.).
 
 2.5 (reasoning about big-O)
 
-2.7 part I (big-O for example loops)
+2.7 part a (big-O for example loops (1) through (6))
 
 2.24 (analysis of fast exponentiation)
 
