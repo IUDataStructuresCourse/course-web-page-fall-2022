@@ -4,7 +4,7 @@ Submit your homework solution on Canvas (as text file, pdf, etc.).
 
 ## Chapter 1 Textbook Exercises
 
-1.11 a b (proofs about Fibonacci numbers and summations)
+1.11 a (proof about Fibonacci numbers and summations)
 
 1.12  (proofs about sumations)
 
