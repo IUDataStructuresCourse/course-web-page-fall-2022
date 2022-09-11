@@ -1,6 +1,6 @@
 This lab is a stepping stone for the Segment Intersection Project.
 
-The starter code for this lab is available for download here.
+The starter code for this lab is available for download [here](./NextPrevBinaryTree.zip).
 
 The lab is to finish a `BinaryTree` class that implements the
 `Sequence` and `ReverseSequence`
