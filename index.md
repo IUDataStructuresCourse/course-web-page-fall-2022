@@ -51,6 +51,7 @@ Sep. 2  |                       |                | Project: [Flood It!](./FloodI
 Sep. 5  | Labor Day             |                |
 Sep. 7  | [Linked Lists and Abstract Data Types](./lectures/Sep-7.md) | Ch. 3 sec. 1-5 | [Homework 1](./HW1.md)
 Sep. 9  |              |                | Lab: [Merge Sort](./MergeSortList/README.md) on Linked List [submit](https://autograder.luddy.indiana.edu/web/project/509)
+Sep. 12 | [More ADTs, Binary Search Trees](./lectures/Sep-12.md) | | 
 
 **Resources**
 
