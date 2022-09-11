@@ -53,8 +53,8 @@ Sep. 7  | [Linked Lists and Abstract Data Types](./lectures/Sep-7.md) | Ch. 3 se
 Sep. 9  |              |                | Lab: [Merge Sort](./MergeSortList/README.md) on Linked List [submit](https://autograder.luddy.indiana.edu/web/project/509)
 Sep. 12 | [More ADTs, Binary Trees](./lectures/Sep-12.md) | Ch. 3 sec. 6-7, Ch. 4 sec 1-2 | 
 Sep. 14 | Binary Search Trees | Ch. 4 sec. 3 and 7 |
-Sep. 16 | | Lab: [NextPrevBinaryTree](./NextPrevBinaryTree/README.md)
-Sep. 23 | | Project: Segment Intersection
+Sep. 16 | | | Lab: [NextPrevBinaryTree](./NextPrevBinaryTree/README.md)
+Sep. 23 | | | Project: Segment Intersection
 
 **Resources**
 
