@@ -183,7 +183,7 @@ We are interested in the running time as the inputs grow large.
 We care about the growth rate of an algorithm's run-time more than
 it's value at a particular point.
 	  
-We focus on the worst-cast run-time of algorithms because we want to
+We focus on the worst-case run-time of algorithms because we want to
 offer guarantees to the user of an algorithm
 	  
 Our goal is to classify functions that grow at a similar rate,

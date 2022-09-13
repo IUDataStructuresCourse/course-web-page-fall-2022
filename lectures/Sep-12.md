@@ -19,13 +19,19 @@ Example uses:
 * depth-search search
 * procedure call stack
 
+Implementation:
+
+* array (push is add to the end, pop removes from end)
+* singly-linked list (push on front, pop from front)
+
+
 ## Queue (FIFO)
 
 Analogy: checkout line at a grocery store 
 
 	interface Queue<E> {
-		E dequeue();
-		void enqueue(E e);
+		E dequeue(); // pop
+		void enqueue(E e); // push
 		E front();
 		boolean empty();
 	}
@@ -153,10 +159,14 @@ What's the first node in the above tree? answer: 1
 What's the first node of the subtree rooted at 6? answer: 4
 
 	public BinaryNode<T> first();
+	
+Algorithm: Go to the left as far as you can.
 
 Find the last node according to an inorder traversal.
 
 	public BinaryNode<T> last();
+
+Algorithm: Go to the right as far as you can.
 
 ### Helper functions nextAncestor and prevAncestor
 
@@ -169,6 +179,11 @@ You may assume that each node has a `parent` attribute.
 **Student in-class exercise**:
 
 	BinaryNode<T> nextAncestor();
+	
+keep going up so long as the node is the right child, 
+when left child, return parent
+	
+	
 
 Solution:
 
