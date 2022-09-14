@@ -166,10 +166,26 @@ Example: Linear Search using the Sequence and Iterator Interfaces
 List implementation of Sequence 
 
     class LinkedList<T> implements Sequence<T> {
-               Node<T> head;
+       Node<T> head;
        ...
-       public class ListIter implements Iter<T> { ... }
+       public class ListIter implements Iter<T> {
+	     Node<T> position;
+		 ListIter(Node<T> pos) { position = pos; }
+		 T get() { return position.data; }
+		 void advance() { 
+		    position = position.next;
+		 }
+		 boolean equals(Iter<T> other) { ... }
+		 Iter<T> clone() { ... }
+	   }
        ...
+       Iter<T> begin() {
+	     return new ListIter(head);
+	   }
+       Iter<T> end() {
+	     return null;
+	   }
+	   
     }
 
 ## Why abstract data types like iterators?
@@ -229,20 +245,36 @@ Using the `Sequence` and `Iter` interfaces, we can implement 1 version
 of `equals` that does the same job as all 9 specific versions! (And
 many more!)
 
-    public static <T> boolean equals(Sequence<T> s1, Sequence<T> s2) {
+    public static <T, U> boolean equals(Sequence<T> s1, Sequence<U> s2, BiPredicate<T,U> eq) {
         Iter<T> j = s2.begin();
         for (Iter<T> i = s1.begin(); ! i.equals(s1.end()); i.advance()) {
-            if (j.equals(s2.end()) || ! i.get().equals(j.get()))
+            if (j.equals(s2.end()) || ! eq.test(i.get(), j.get()))
                     return false;
             j.advance();
         }
         return j.equals(s2.end());
     }
 
+
+   LinkedList<Integer> L = ...
+   ArrayList<Integer> A = ...
+   equals(L, A)
+
 Student exercise: implement a `max` algorithm that returns the maximum
 element of a `Sequence`.
 
-    public static <T> T max(Sequence<T> s, T zero, BiPredicate<T, T> less);
+    public static <T> T max(Sequence<T> s, T zero, BiPredicate<T, T> less) {
+	  if (s.begin().equals(s.end())) {
+	    return zero;
+	  }
+	  Iter<T> max_so_far = s.begin();
+      for (Iter<T> i = s.begin(); ! i.equals(s.end()); i.advance()) {
+	    if (less.test(max_so_far.get(), i.get())) {
+		  max_so_far = i.clone();
+		}
+	  }
+	  return max_so_far.get();
+	}
 
 Here's what you need to know about `BiPredicate`:
 
@@ -251,6 +283,9 @@ Here's what you need to know about `BiPredicate`:
 	}
 
 Student in-class exercise: implement Sequence using an array
+
+
+
 
 Now the algorithms on `Sequence` (`find_first_equal`, `equals`, etc.)  can
 also be used with Array!

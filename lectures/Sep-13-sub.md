@@ -1,0 +1,162 @@
+# Time Complexity
+
+We are interested in the running time as the inputs grow large.
+
+We care about the growth rate of an algorithm's run-time more than
+it's value at a particular point.
+	  
+We focus on the worst-case run-time of algorithms because we want to
+offer guarantees to the user of an algorithm
+	  
+Our goal is to classify functions that grow at a similar rate,
+ignoring details that don't matter.
+
+Functions to think about: n, 10n, log₂ n, n log₂ n, 10 n², n² + n
+
+## Asymptotic Upper Bound
+
+**Definition** (Big-O) For a given function g, we define O(g) as the
+the set of functions that grow similarly or slower than g. More
+precisely, f ∈ O(g) iff ∃ k c. ∀ n ≥ k. f(n) ≤ c g(n).
+
+We say that g(n) is an *asymptotic upper bound* of all the functions
+in the set O(g).
+
+a number x is even if ∃ k. 2 k = x
+
+6 is even!
+Prove it: k=3 is the witness
+
+Theorem. If x and y are even, then x + y is even.
+Proof.
+x is even => ∃ k. 2 k = x => 2 k₁ = x
+y is even => ∃ k. 2 k = y => 2 k₂ = y
+
+x + y = 2k₁ + 2k₂ = 2(k₁ + k₂)
+
+Goal: x + y is even.
+=> ∃ k. 2 k = x + y
+=> 2 ___ = x + y
+
+witness: k= k₁ + k₂
+
+
+**Notation** We write f ≲ g iff f ∈ O(g), and say that f is
+asymptotically less-or-equal to g.
+
+Demonstrate the main idea and the role of k and c.
+
+[https://www.desmos.com/calculator](https://www.desmos.com/calculator)
+
+e.g. 4x versus x²
+
+1. Is 4x ≲ x²?
+2. Is x² ≲ 4x?
+   
+e.g. x + 10 versus x
+
+1. Is x + 10 ≲ x?
+2. Is x ≲ x + 10?
+
+**Example** Let's show that (n² + n + 10) ∈ O(n²).
+So we need to find a constant c such that
+
+n² + n + 10 ≤ c n²   when n is large.
+
+We divide both sides by n².
+
+1 + 1/n + 10/n² ≤ c
+
+When n is large, the terms 1/n and 10/n² get very small, so we need to
+choose something a bit bigger than 1, so we choose c = 2.
+
+Next we need to find a constant k such that
+
+n² + n + 10 ≤ 2 n²   when n is greater than k.
+
+We compute a handful of values of these functions.
+
+| n   | n² + n + 10  | 2n²  |
+| --- | ------------ | ---- |
+| 1   | 12           |  2   |
+| 2   | 16           |  8   |
+| 3   | 22           | 18   |
+| 4   | 30           | 32   |
+| 5   | 40           | 50   |
+| 6   | 52           | 72   |
+
+We see that from n=4 and onwards, 2n² is greater than n² + n + 10, so
+we choose k = 4. We have some emprical evidence that we've made the
+correct choices, but to know for sure, we prove the following theorem.
+
+**Theorem** ∀ n ≥ 4, n² + n + 10 ≤ 2 n².
+
+Proof. We proceed by induction on n.
+* Base case (n = 4) 
+   n² + n + 10 = 30
+   2n² = 32
+   good
+   
+* Induction case. Let n be any integer such that n ≥ 4
+    and n² + n + 10 ≤ 2 n² (IH). We need to show that
+
+		(n+1)² + (n+1) + 10 ≤ 2 (n+1)²
+
+	which we can rearrange to the following, separating out parts that
+	match the induction hypothesis (IH) from the rest.
+
+		(n² + n + 10) + (2n + 2) ≤ 2n² + (4n + 2)
+
+	Thanks to the IH, it suffices to show that 
+
+		2n + 2 ≤ 4n + 2
+
+	which is true because n ≥ 4 ≥ 0.
+
+
+## Student exercise
+
+Show that the following function f
+
+    f(n) = 2 log₂ n 
+	
+is asymptotically less-or-equal the following function g
+
+    g(n) = n/2
+
+That is, show that 
+
+    2 log₂ n ≲ n/2.
+
+In big-O notation, this is equivalent to
+
+    2 log₂ n ∈ O(n/2). 
+
+Hint: experiment with values of n that are powers of 2 because it is
+easy to take the log of them:
+
+	log₂(2) = 1
+	log₂(4) = 2
+	log₂(8) = 3
+	...
+
+## Reasoning about asymptotic upper bounds
+
+* Polynomials:
+    If f(n) = cᵢ nⁱ + ... + c₁ n¹ + c₀, 
+	then f ≲ nⁱ.
+
+* Addition:
+    If f₁ ≲ g and f₂ ≲ g,
+    then f₁ + f₂ ≲ g.
+
+* Multiplication:
+    If f₁ ≲ g₁ and f₂ ≲ g₂,
+    then f₁ * f₂ ≲ g₁*g₂.
+
+* Reflexivity:
+    f ≲ f
+
+* Transitivity:
+    If f ≲ g and g ≲ h, then f ≲ h.
+
