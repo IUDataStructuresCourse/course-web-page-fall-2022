@@ -19,13 +19,18 @@ Example uses:
 * depth-search search
 * procedure call stack
 
+Implementation: 
+
+* array
+* singly-linked list
+
 ## Queue (FIFO)
 
 Analogy: checkout line at a grocery store 
 
 	interface Queue<E> {
-		E dequeue();
-		void enqueue(E e);
+		void enqueue(E e); // aka push
+		E dequeue(); // aka pop
 		E front();
 		boolean empty();
 	}
