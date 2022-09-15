@@ -90,7 +90,8 @@ height of the tree
 
 `insert` into a binary search tree using the `find` method.
 
-Return the inserted node, or null if the key is already in the tree.
+Return the inserted node,
+or null if the key is already in the tree.
 
 
 
@@ -176,7 +177,10 @@ What is the time complexity? answer: O(h) where h is the height of the tree.
 Solution for `remove`:
 
     public void remove(T key) {
-       root = remove_helper(root, key);
+       Node n = remove_helper(root, key);
+	   if (n != null) {
+	      root = n;
+	   }
     }
 
     private Node remove_helper(Node n, int key) {
@@ -184,9 +188,11 @@ Solution for `remove`:
             return null;
         } else if (lessThan(key, n.data)) { // remove in left subtree
             n.left = remove_helper(n.left, key);
+			n.left.parent = n;
             return n;
         } else if (lessThan(n.data, key)) { // remove in right subtree
             n.right = remove_helper(n.right, key);
+			n.right.parent = n;
             return n;
         } else { // remove this node
             if (n.left == null) {
@@ -194,9 +200,10 @@ Solution for `remove`:
             } else if (n.right == null) {
                 return n.left;
             } else { // two children, replace with first of right subtree
-                Node min = n.right.first();
+                Node min = n.right.first(); // min == n.right
                 n.data = min.data;
                 n.right = n.right.delete_first(); // another helper function
+			    n.right.parent = n;
                 return n;
             }
         }

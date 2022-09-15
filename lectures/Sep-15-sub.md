@@ -4,6 +4,10 @@
 the set of functions that grow similarly or slower than g. More
 precisely, f ∈ O(g) iff ∃ k c. ∀ n ≥ k. f(n) ≤ c g(n).
 
+f is asymptotically less-or-equal to g:
+
+     f ≲ g iff f ∈ O(g)
+
 
 ## Example: anagram detection
 
@@ -11,6 +15,16 @@ Two words are **anagrams** of each other if they contain the same
 characters, that is, they are a rearrangement of each other.
 
 examples: mary <-> army, silent <-> listen, doctor who <-> torchwood
+
+**Student exercise**: sketch and algorithm for detecting whether two
+strings are anagrams of each other (ignoring spaces).
+
+
+
+
+
+
+
 
 For the following algorithms, what's the time complexity? space
 complexity?
@@ -27,29 +41,40 @@ complexity?
 * Algorithm 2:
   Sort both strings then 
   compare the sorted strings for equality
-  This is O(n lg n) time and O(1) space.
+  This is O(n log n) time and O(1) space.
 
 * Algorithm 3:
   Count letter occurences in both words and then compare
-	  the number of occurences of each letter.
+      the number of occurences of each letter.
   This is O(n) time and O(k) space
   (where k is the number of characters in the alphabet).
 
 ## Practice analyzing the time complexity of an algorithm: Insertion Sort
 
-	public static void insertion_sort(int[] A) {
-		for (int j = 1; j != A.length; ++j) {
-			int key = A[j];
-			int i = j - 1;
-			while (i >= 0 && A[i] > key) {
-				A[i+1] = A[i];
-				i -= 1;
-			}
-			A[i+1] = key;
-		}
-	}
+    public static void insertion_sort(int[] A) {
+        for (int j = 1; j != A.length; ++j) {  // n iterations,    total: O(n^2)
+            int key = A[j];   // O(1)
+            int i = j - 1;    // O(1)
+            while (i >= 0 && A[i] > key) {    //  n iterations (worst case), total: O(n)
+                A[i+1] = A[i]; // O(1)
+                i -= 1;        // O(1)        // while loop body: O(1)
+            }
+			if ... {
+			   O(1)
+			} else {
+			   O(n)
+			} // O(n)
+            A[i+1] = key; // O(1)
+        }                                     // for loop body: O(n)
+    }
 
 What is the time complexity of insertion_sort?
+
+
+
+
+
+
 
 Answer:
 * inner loop is O(n)
@@ -59,16 +84,16 @@ Answer:
 # Time Complexity of Java collection operations
 
 * LinkedList
-	* add: O(1)
-	* get: O(n)
-	* contains: O(n)
-	* remove: O(1)
+    * add: O(1)
+    * get: O(n)
+    * contains: O(n)
+    * remove: O(1)
 
 * ArrayList
-	* add: O(1)
-	* get: O(1)
-	* contains: O(n)
-	* remove: O(n)
+    * add: O(1)
+    * get: O(1)
+    * contains: O(n)
+    * remove: O(n)
 
 # Common complexity classes:
 
@@ -126,50 +151,50 @@ Split the array in half and sort the two halves.
 
 Merge the two halves.
 
-	private static int[] merge(int[] left, int[] right) {
-	   int[] A = new int[left.length + right.length];
-	   int i = 0;
-	   int j = 0;
-	   for (int k = 0; k != A.length; ++k) {
-		   if (i < left.length
-			   && (j ≥ right.length || left[i] <= right[j])) {
-			  A[k] = left[i];
-			  ++i;
-		   } else if (j < right.length) {
-			  A[k] = right[j];
-			  ++j;
-		   }
-	   }
-	   return A;
-	}
+    private static int[] merge(int[] left, int[] right) {
+       int[] A = new int[left.length + right.length];
+       int i = 0;
+       int j = 0;
+       for (int k = 0; k != A.length; ++k) {
+           if (i < left.length
+               && (j ≥ right.length || left[i] <= right[j])) {
+              A[k] = left[i];
+              ++i;
+           } else if (j < right.length) {
+              A[k] = right[j];
+              ++j;
+           }
+       }
+       return A;
+    }
 
-	public static int[] merge_sort(int[] A) {
-	   if (A.length > 1) {
-		   int middle = A.length / 2;
-		   int[] L = merge_sort(Arrays.copyOfRange(A, 0, middle));
-		   int[] R = merge_sort(Arrays.copyOfRange(A, middle, A.length));
-		   return merge(L, R);
-	   } else {
-		   return A;
-	   }
-	}    
+    public static int[] merge_sort(int[] A) {
+       if (A.length > 1) {
+           int middle = A.length / 2; // O(1)
+           int[] L = merge_sort(Arrays.copyOfRange(A, 0, middle)); // ??
+           int[] R = merge_sort(Arrays.copyOfRange(A, middle, A.length)); // ??
+           return merge(L, R); // O(n)
+       } else {
+           return A;
+       }
+    }
 
 What's the time complexity?
 
 Recursion tree:
 
-			   c*n                    = c*n
-			 /     \
-			/       \
-	   c*n/2        c*n/2             = c*n
-	   /  \         /   \
-	  /    \       /     \     
-	c*n/4  c*n/4  c*n/4  c*n/4        = c*n
-	...
+               cn                    = cn
+             /     \
+            /       \
+       cn/2        cn/2              = cn
+       /  \        /   \
+      /    \      /     \
+    cn/4  cn/4  cn/4  cn/4           = cn
+    ...
 
-Height of the recursion tree is log(n).
+Height of the recursion tree is log₂(n).
 
-So the total work is c\, n\, log(n).
+So the total work is c n log₂(n).
 
-Time complexity is O(n \, log(n)).
+Time complexity is O(n log₂(n)).
 
