@@ -53,7 +53,7 @@ in O(log n) time.
 ## Code Base
 
 Implementations of the GUI and the Line Sweep Algorithm are provided
-to you in full in the [`SegmentIntersection.zip`](./SegmentIntersection/SegmentIntersection.zip)
+to you in full in the [`SegmentIntersection.zip`](./SegmentIntersection.zip)
 file. Your task is to complete the implementation of the
 `BinarySearchTree` and `AVLTree` class. The `BinarySearchTree` class
 is an elaboration of the class described in lecture and that you used
