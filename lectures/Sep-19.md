@@ -13,8 +13,9 @@ Given a set of n segments, are their any pairs that intersect?
 Suppose we have a routine for testing whether 2 segments intersect.
 
 Simplifications:
-	* No vertical segments
-	* No three-way (or more) intersections
+
+* No vertical segments
+* No three-way (or more) intersections
 
 Brute force: test all combinations O(n²)
 
@@ -41,52 +42,52 @@ Recall that search time is O(h), where h is the height of the tree.
 
 Definition of height
 
-	int compute_height(Node n) {
-			if (n == null) {
-					return -1;
-			} else {
-					int hl = compute_height(n.left);
-					int hr = compute_height(n.right);
-					return 1 + Math.max(hl, hr);
-			}
-	}
+    int compute_height(Node n) {
+        if (n == null) {
+            return -1;
+        } else {
+            int hl = compute_height(n.left);
+            int hr = compute_height(n.right);
+            return 1 + Math.max(hl, hr);
+        }
+    }
 
 Example tree with heights in brackets:
 
-					 41[3]
-				   /       \
-				20[2]       65[1]
-			   /    \        /
-			 11[0]  29[1] 50[0]
-			  /
-			26[0]
+                     41[3]
+                   /       \
+                20[2]       65[1]
+               /    \        /
+             11[0]  29[1] 50[0]
+              /
+            26[0]
 
 The problem of unbalanced trees
 
-					o
-					 \
-					  o
-					   \
-						o
-						 \
-						  o
-						   \
-							o
-							 \
-							  o
-							   \
-								o
+                    o
+                     \
+                      o
+                       \
+                        o
+                         \
+                          o
+                           \
+                            o
+                             \
+                              o
+                               \
+                                o
 
 height = n
 
 vs.
 
-						  o
-						 / \
-						/   \
-					   o     o
-					  / \   / \
-					 o   o o   o
+                          o
+                         / \
+                        /   \
+                       o     o
+                      / \   / \
+                     o   o o   o
 
 height = log(n)
 
@@ -140,19 +141,19 @@ To simplify, we have
     N(h-2) + N(h-2) + 1 < N(h-1) + N(h-2) + 1 = N(h)
     2·N(h-2) + 1 < N(h)
     2·N(h-2) < N(h)
-	= 2·2·N(h-4)
+    = 2·2·N(h-4)
     = 2·2·2·N(h-6)
-	...
-	= 2^(h/2)       < N(h)
+    ...
+    = 2^(h/2)       < N(h)
 
 Take the log of both sides
 
     log₂ 2^(h/2) < log₂ N(h)
-                        	      (log₂ Aᴮ = B log₂ A)
+                                  (log₂ Aᴮ = B log₂ A)
     h/2 · log₂ 2 < log₂ N(h)
-                        	      (log₂ 2 = 1, i.e. 2¹ = 2)
+                                  (log₂ 2 = 1, i.e. 2¹ = 2)
     h/2 · 1      < log₂ N(h)
-                                  (multiply both side by 2)	
+                                  (multiply both side by 2) 
     h            < 2 · log₂ N(h)
 
 so we have
@@ -219,45 +220,45 @@ rotation is different. So let's look at more situations.
 
 ### Insert example: insert(55)
 
-				  41
-				/    \
-			  20      65
-			 /  \     /
-			11   29  50
-				 /
-			   26
+                  41
+                /    \
+              20      65
+             /  \     /
+            11   29  50
+                 /
+               26
 
 So 65 breaks the AVL invariant, and we have a zig-zag:
 
-			   65
-			  /
-			50
-			  \
-			   55
+               65
+              /
+            50
+              \
+               55
 
 A right rotation at 65 gives us a zag-zig, we're not making progress!
 
-			  65(y)                        50(x)
-			 /        right_rotate(65)       \
-			50(x)     ---------------->      65(y)
-			  \                              /
-			   55(B)                       55(B)
+              65(y)                        50(x)
+             /        right_rotate(65)       \
+            50(x)     ---------------->      65(y)
+              \                              /
+               55(B)                       55(B)
 
 Instead, let's try a left rotate at 50:
 
-			  65                           65
-			 /        left_rotate(50)     /
-			50(x)     --------------->  55(y)
-			  \                         /
-			   55(y)                 50(x)
+              65                           65
+             /        left_rotate(50)     /
+            50(x)     --------------->  55(y)
+              \                         /
+               55(y)                 50(x)
 
 This looks familiar, now we can rotate right. 
 
-				  65(y)                        55(x)
-				 /      right_rotate(65)       /  \
-			   55(x)    --------------->    50(A)  65(y)
-			  /
-			50(A)
+                  65(y)                        55(x)
+                 /      right_rotate(65)       /  \
+               55(x)    --------------->    50(A)  65(y)
+              /
+            50(A)
 
 ### Student question
 
@@ -370,49 +371,49 @@ From the changed node on up  (there can be several AVL violations)
 * suppose x is the lowest node that is not AVL
 * if height(x.left) ≤ height(x.right)
 
-	1. if height(x.right.left) ≤ height(x.right.right)
+    1. if height(x.right.left) ≤ height(x.right.right)
 
-		let k = height(x.right.right)
+        let k = height(x.right.right)
 
-					x k+2                                y ≤k+2
-				   / \          left_rotate(x)          / \
-			   ≤k A   y k+1     ===============>  ≤k+1 x   C k
-					 / \                              / \
-				≤k B   C k                      ≤k A   B ≤k
+                    x k+2                                y ≤k+2
+                   / \          left_rotate(x)          / \
+               ≤k A   y k+1     ===============>  ≤k+1 x   C k
+                     / \                              / \
+                ≤k B   C k                      ≤k A   B ≤k
 
-	2. if height(x.right.left) > height(x.right.right)
+    2. if height(x.right.left) > height(x.right.right)
 
-		let k = height(x.right.left)
+        let k = height(x.right.left)
 
-			  k+2 x                               y k+1
-				 / \                            /   \
-			k-1 A   z k+1    R(z), L(x)      k x     z k
-				   / \      =============>    / \   / \
-				k y   D k-1              k-1 A   B C   D k-1
-				 / \
-				B   C <k
+              k+2 x                               y k+1
+                 / \                            /   \
+            k-1 A   z k+1    R(z), L(x)      k x     z k
+                   / \      =============>    / \   / \
+                k y   D k-1              k-1 A   B C   D k-1
+                 / \
+                B   C <k
 
 * if height(x.left) > height(x.right)
 
-	1. if height(x.left.left) < height(x.left.right)  (note: strictly less!)
+    1. if height(x.left.left) < height(x.left.right)  (note: strictly less!)
 
-		let k = height(x.left.right)
+        let k = height(x.left.right)
 
-					x k+2                                 z k+1
-				   / \                                  /   \
-			  k+1 y   D k-1      L(y), R(x)          k y     x k
-				 / \            =============>        / \   / \
-			k-1 A   z k                              A   B C   D    <k
-				   / \
-				  B   C <k
+                    x k+2                                 z k+1
+                   / \                                  /   \
+              k+1 y   D k-1      L(y), R(x)          k y     x k
+                 / \            =============>        / \   / \
+            k-1 A   z k                              A   B C   D    <k
+                   / \
+                  B   C <k
 
-	2. if height(x.left.left) ≥ height(x.left.right)  (note: greater-equal!)
+    2. if height(x.left.left) ≥ height(x.left.right)  (note: greater-equal!)
 
-		let k = height(l.left.left)
+        let k = height(l.left.left)
 
-				  x k+2                                  y k+1
-				 / \         right_rotate(x)            / \
-			k+1 y   C k-1    ===============>        k A   x k+1
-			   / \                                        / \
-			k A   B ≤k                                ≤k B   C k-1
+                  x k+2                                  y k+1
+                 / \         right_rotate(x)            / \
+            k+1 y   C k-1    ===============>        k A   x k+1
+               / \                                        / \
+            k A   B ≤k                                ≤k B   C k-1
 
