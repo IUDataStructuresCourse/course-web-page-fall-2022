@@ -6,7 +6,7 @@
 		
         public Node first() {
             Node n = this;
-            while(n.left != null) {
+            while (n.left != null) {
             	n = n.left;
             }
             return n;
@@ -23,38 +23,38 @@
         }		
 
         public Node last() {
-            if (right != null ){
-                return right.last();
-            }else {
+            if (right == null) {
                 return this;
+            } else {
+                return right.last();
             }
         }
 		
         public Node nextAncestor() {
-            Node n = parent;
-            if(n != null) {
-            	if(!equals(parent.left)) {
-            		n = n.nextAncestor();
-            	}
+            if (parent == null) {
+                return null;
+			} else if (this == parent.left) {
+			    return parent;
+			} else { // this == parent.right
+            	return parent.nextAncestor();
             }
-            return n;
         }
 		
         public Node prevAncestor() {
             Node N = this;
-            while(N.parent != null){
-                if(N.parent.right == N) return N.parent;
+            while (N.parent != null) {
+                if (N.parent.right == N)
+				    return N.parent;
                 N = N.parent;
             }
             return null;
         }		
 		
         public Node next() {
-            if(right != null){
+            if (this.right == null) {
+                return this.nextAncestor();
+            } else {
                 return right.first();
-            }
-            else{
-                return nextAncestor();
             }
         }
 		
@@ -78,27 +78,27 @@
 
         @Override
         public void retreat() {
-            curr=curr.previous();
+            curr = curr.previous();
         }
 
         @Override
         public void advance() {
-            curr=curr.next();
+            curr = curr.next();
         }
 
         @Override
         public boolean equals(Object other) {
-            return curr == other;
+            return curr == other; // comparing a node to an iterator, bad
         }
 		
         @Override
         public boolean equals(Object other) {
-            return curr.equals(other);
+            return curr.equals(other); // always false, bad
         }
 		
         @Override
         public boolean equals(Object other) {
-            return ((Iter) other).curr==curr;
+            return ((Iter) other).curr == curr; // good
         }
 
         @Override
@@ -156,11 +156,11 @@ From the changed node on up  (there can be several AVL violations)
 
         let k = height(x.right.right)
 
-                    x k+2                                y ≤k+2
-                   / \          left_rotate(x)          / \
-               ≤k A   y k+1     ===============>  ≤k+1 x   C k
-                     / \                              / \
-                ≤k B   C k                      ≤k A   B ≤k
+                     x k+2                                y k+2
+                    / \          left_rotate(x)          / \
+               k-1 A   y k+1     ===============>   k+1 x   C k
+                      / \                              / \
+            k or k-1 B   C k                      k-1 A   B k or k-1
 
     2. if height(x.right.left) > height(x.right.right)
 
