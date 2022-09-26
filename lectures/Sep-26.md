@@ -1,6 +1,6 @@
-# Thorough Testing
+# How to Up Your Testing Game
 
-Create helper functions to test the invariants:
+Create helper functions to test the data structure invariants:
 
 1. Test the BST property
 
@@ -12,7 +12,7 @@ Create helper functions to test the invariants:
 
 5. Test that the height of the tree is O(log n).
 
-Create a helper function to test the read operations:
+Create a helper function to test all the operations for reading the tree:
 
 1. Test next(), previous()
 
@@ -22,11 +22,13 @@ Create a helper function to test the read operations:
 
 4. Test isEmpty() and size()
 
-Test the mutating operations:
+Create helper functions for testing the tree mutating operations:
 
 1. Test insert()
+   Test all the read operations after each insert.
 
 2. Test remove()
+   Test all the read operations after each remove.
 
 Test on lots of different trees.
 

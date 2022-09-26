@@ -13,4 +13,3 @@ Submit your homework solution on Canvas (as text file, pdf, etc.).
       Make sure to label where you use the induction hypothesis.
 
 * 4.19
-
