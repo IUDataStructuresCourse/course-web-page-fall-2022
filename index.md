@@ -57,7 +57,7 @@ Sep. 16 | | | Lab: [NextPrevBinaryTree](./NextPrevBinaryTree/README.md)
 Sep. 19 | [Balanced Search Trees (AVL)](./lectures/Sep-19.md) | | Lab NextPrevBinaryTree [submission](https://autograder.luddy.indiana.edu/web/project/458) due
 Sep. 21 | [Code Review, Finish AVL](./lectures/Sep-21.md) | Ch. 4 sec. 4 | 
 Sep. 23 | | | Lab: Work on Segment Intersection
-Sep. 26 | Hash tables | | [Project: Segment Intersection](./SegmentIntersection/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/465)
+Sep. 26 | [Hash tables](./lectures/Sep-26.md) | | [Project: Segment Intersection](./SegmentIntersection/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/465)
 Sep. 28 | Code Review and Testing | 
 Sep. 30 | | | Lab: work on HashTable
 Oct. 3  | Heaps and Priority Queues | | Due: HashTable
