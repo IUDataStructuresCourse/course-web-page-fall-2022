@@ -1,7 +1,7 @@
 # Lab: hash tables with separate chaining
 
 The goal for this lab is to implement a hash table that uses separate
-chaining. The `Map` interface specifies the methods that should be
+chaining. The [`Map`](./Map.java) interface specifies the methods that should be
 provided by your `HashTable` class.
 
 - `V get(K key) throws Exception`
