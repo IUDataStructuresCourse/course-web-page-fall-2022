@@ -62,6 +62,8 @@ Sep. 28 | [Assertions, Pre and Post-conditions, Correctness](./lectures/Sep-28.m
 Sep. 30 | | | Lab: finish Segment Intersection
 Oct. 3  | Heaps and Priority Queues | | [Project: Segment Intersection](./SegmentIntersection/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/465)
 Oct. 5  | Review for Midterm Exam |
+Oct. 7  |  | Lab: [HashTable](./HashTable/README.md), [submit test cases](https://autograder.luddy.indiana.edu/web/project/519) 
+Oct. 10 |  | [Hashtable](./HashTable/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/443)
 Oct. 12 | **Midterm Exam**        |
 Oct. 14 | **Fall Break**          | 
 
