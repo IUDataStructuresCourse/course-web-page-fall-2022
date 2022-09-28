@@ -58,7 +58,7 @@ Sep. 19 | [Balanced Search Trees (AVL)](./lectures/Sep-19.md) | | Lab NextPrevBi
 Sep. 21 | [Code Review, Finish AVL](./lectures/Sep-21.md) | Ch. 4 sec. 4 | 
 Sep. 23 | | | Lab: work on Segment Intersection
 Sep. 26 | [Testing, Hash tables](./lectures/Sep-26.md) | | 
-Sep. 28 | Assertions, Pre and Post-conditions, Correctness | 
+Sep. 28 | [Assertions, Pre and Post-conditions, Correctness](./lectures/Sep-28.md) | 
 Sep. 30 | | | Lab: finish Segment Intersection
 Oct. 3  | Heaps and Priority Queues | | [Project: Segment Intersection](./SegmentIntersection/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/465)
 Oct. 5  | Review for Midterm Exam |
