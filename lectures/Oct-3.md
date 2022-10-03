@@ -240,17 +240,26 @@ Example: Change the key of 9 to 20.
 
 ## Student exercise: come up with the algorithm for `increase_key`
 
-Answer: the idea is to propagate the element up. For example,
+Answer: the idea is to propagate the element up. Continuing the above
+example,
 
          ___16___
         /        \
-      14          20
+      14          10
+     /  \        /  \
+    8    7    *20*   3
+
+becomes
+
+         ___16___
+        /        \
+      14         *20*
      /  \        /  \
     8    7      10    3
 
 becomes
 
-         ___20___
+         __*20*__
         /        \
       14          16
      /  \        /  \
