@@ -40,7 +40,7 @@ that the postcondition is true.
 
 What's the precondition for `find_first_true_sorted`?
 
-Answser: The array A is sorted in the range `[begin,end)`.
+Answer: The array A is sorted in the range `[begin,end)`.
 
 We can document and check this precondition by placing an
 `assert` statement at the beginning of `find_first_true_sorted`.
@@ -82,14 +82,14 @@ signal an error immediately and you'll know to fix your test.
 
 What's the postcondition for `find_first_true_sorted`?
 
-The return value `i` is either
+The return value `result` is either
 1) the index of the first `true` in the array, or
-2) the index is equal to `end`.
+2) the index is equal to `end` if there are no `true` elements.
 
 Let's unpack "the first `true`in the array". 
 Obviously, we have
 
-    A[i] == true
+    A[result] == true
 
 but is also means that the values in the lower indices are `false`.
 So we need the following helper function:
@@ -111,7 +111,8 @@ postcondition, but this time at the end of the function, before every
 `return`.
 
     public static int fft_sorted(boolean[] A, int begin, int end) {
-        assert is_sorted(A, begin, end);
+        assert is_sorted(A, begin, end) 
+		   && 0 <= begin && begin <= end && end <= A.length;
         if (begin == end) {
             int result = end;
             assert all_false(A, begin, result)
