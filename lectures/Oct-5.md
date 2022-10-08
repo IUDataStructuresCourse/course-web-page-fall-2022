@@ -10,6 +10,14 @@
 		return toReturn;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
 ## Another Update Height
 
 	protected boolean updateHeight() {
@@ -29,6 +37,12 @@
 		return (prev != this.height);
 	}
 
+
+
+
+
+
+
 ## Search
 
     public Node search(K key) {
@@ -40,6 +54,14 @@
         return null;
     }
 
+
+
+
+
+
+
+
+
 ## Another Search
 
     public Node search(K key) {
@@ -49,6 +71,13 @@
         }
         return suspect;
     }
+
+
+
+
+
+
+
 
 ## Right Rotate
 
@@ -203,14 +232,7 @@
                 root = makeAVL(root,root);
                 return root;
             }
-            while (parent != null){
-                if (!parent.isAVL()){
-                    root = makeAVL(root,parent);
-                    return root;
-                }else{
-                    parent = parent.parent;
-                }
-            }
+			makeAVL(root,parent);
             return root;
         }
     }

@@ -26,7 +26,10 @@ the methods that should be provided by your `HashTable` class.
     key in the hash table.
 
 You will also need to implement the constructor for `HashTable`,
-in which you will need to initialize the table.
+in which you will need to initialize the table. The constructor
+should have one parameter, the initial table size:
+
+    public HashTable(int table_size);
 
 As usual, you may create any helper methods that you find useful.
 
