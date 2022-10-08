@@ -260,6 +260,29 @@ This looks familiar, now we can rotate right.
               /
             50(A)
 
+
+### Insert Example with Two Violations 
+
+      _6[2]_
+     /      \
+    3[0]     8[1]
+             /  \
+          7[0]   10[0]
+    
+Insert 11:
+
+      _6[3]_
+     /      \
+    3[0]     8[2]
+             /  \
+          7[0]   10[1]
+         			 \
+		         	  11[0]
+
+
+
+
+
 ### Student question
 
 starting with an empty AVL tree, insert 

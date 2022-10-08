@@ -61,9 +61,9 @@ Sep. 26 | [Testing, Hash tables](./lectures/Sep-26.md) | |
 Sep. 28 | [Assertions, Pre and Post-conditions, Correctness](./lectures/Sep-28.md) | 
 Sep. 30 | | | Lab: finish Segment Intersection
 Oct. 3  | [Heaps and Priority Queues](./lectures/Oct-3.md) | | [Project: Segment Intersection](./SegmentIntersection/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/465)
-Oct. 5  | Code Review, Binomial Queues |
+Oct. 5  | [Code Review](./lectures/Oct-5.md) |
 Oct. 7  |  | Lab: [HashTable](./HashTable/README.md), [submit test cases](https://autograder.luddy.indiana.edu/web/project/519) 
-Oct. 10 | Review for Midterm Exam | [Hashtable](./HashTable/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/443)
+Oct. 10 | [Review for Midterm Exam](./lectures/Oct-10.md) | [Hashtable](./HashTable/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/443)
 Oct. 12 | **Midterm Exam**        |
 Oct. 14 | **Fall Break**          | 
 

@@ -324,7 +324,7 @@
             balance(parent);
         }
     }
-
+    
     private void deleteWithTwoKids(K key) {
         Node deleteMe = this.search(key);
         Node replacer = deleteMe.right.first();
@@ -345,5 +345,30 @@
         updateHeightHelper(replacer);
         if (replacer != null) {
             balance(replacer);
+        }
+    }
+
+## Another AVL Remove
+
+    public void remove(K key) {
+        Node node = find(key, root, null);
+        if (node == null || !node.data.equals(key)) {
+            return;
+        } else {
+            --numNodes;
+            Node parent = node.parent;
+            if (node.left != null && node.right != null) { // Two children
+                Node small = node.right.first();
+                node.data = small.data;
+                parent = small.parent;
+                replace(small, small.right);
+            } else if (node.left != null) { // One child to the left
+                replace(node, node.left);
+            } else if (node.right != null) { // One child to the right
+                replace(node, node.right);
+            } else { // Leaf node
+                replace(node, null);
+            }
+            fixups(parent);
         }
     }

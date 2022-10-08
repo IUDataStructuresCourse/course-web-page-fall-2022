@@ -201,8 +201,7 @@ From the changed node on up  (there can be several AVL violations)
 
 ## Example: Remove Node and fix AVL
 
-Given the following AVL Tree, delete the node with key 8 and
-restore the AVL property using tree rotations:
+Recall that we can restore the AVL property using tree rotations:
 
 				y                         x
 			   / \    right_rotate(y)    / \
@@ -210,6 +209,7 @@ restore the AVL property using tree rotations:
 			 / \     <-------------        / \
 			A   B     left_rotate(x)      B   C
 
+Given the following AVL Tree, delete the node with key 8.
 (This example has two nodes that end up violating the AVL
 property.)
 
