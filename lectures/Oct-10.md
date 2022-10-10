@@ -11,12 +11,16 @@ Topics
     * interfaces
     * iterators
 * Time complexity
+* Loop Invariants
 * Binary Search Trees
 * AVL Trees (balanced BSTs)
 
 ## Big-O, big-Ω, big-Θ
 
 Def. f ∈ O(g) iff exists c k st. for all n >= k. f(n) <= c g(n)
+
+Def. We write f ≲ g iff f ∈ O(g), and say that f is asymptotically
+less-or-equal to g.
 
 Simplest example
 
@@ -118,6 +122,96 @@ To clarify:
    and    g(n) ≤ f(n) + g(n)  for all n ≥ k, 
    so     max(f(n), g(n)) ≤ f(n) + g(n) for all n ≥ k.
    We choose c₂ to be 1.
+
+## Loop Invariants
+
+A loop invariant is a statement about the current state of affairs
+that it true at the beginning of each loop iteration. A loop invariant
+must satisfy the following three criteria.
+
+1. Show that the loop invariant is true before the start of the loop.
+
+2. For a hypothetical iteration of the loop, assume that the
+   invariant is true at the beginning of the loop body and show that
+   the loop invariant is true at the end of the loop body.
+   
+3. Show that the loop invariant combined with the loop condition being
+   false implies the correctness criteria for the algorithm.
+
+## Example: Insertion phase of Insertion Sort
+
+Suppose the half-open range [begin,end) of A is sorted except for the
+last element in position A[end-1]. Starting at next-to-last element,
+this function moves elements to the right until the appropriate
+location is found for the last element.
+
+    static void insertion(int[] A, int begin, int end) {
+        int key = A[end - 1];
+        int i = end - 2;
+        while (i != begin - 1 && A[i] > key) {
+            swap(A, i, i + 1);
+            i -= 1;
+        }
+    }
+
+Helper function:
+
+    static boolean is_sorted(int[] A, int begin, int end);
+
+What is the loop invariant?
+
+	is_sorted(A, begin, i + 1)
+	&& is_sorted(A, i + 1, end)
+	&& all_less(A, begin, i + 1, i+2, end)
+
+1. Before the loop starts:
+
+		|_________|_|
+		 ^       ^   ^
+		 |       |   |
+		 begin   i   end
+
+    * [begin,i+1) is sorted.
+	
+    * [i+1,end) has one element, and therefore trivially sorted.
+	
+    * [i+2,end) is empty, so its vacuously true that everying
+      in [begin,i+1) is less-or-equal everything in [i+2,end).
+  
+2. A hypothetical iteration of the loop.
+
+			LHS      RHS
+		 |______X|K|_____|
+				^
+				|
+				i
+
+   We swap A[i] and A[i+1] and decrement i.
+
+		   LHS'     RHS'
+		 |______|K|X____|
+			   ^
+			   |
+			   i
+		  
+    * The LHS' is unchanged, so it is still sorted.
+	
+    * The K+RHS' is sorted because X > K (from the if)
+      and because X is less-or-equal than everything on the RHS.
+	  
+    * Everything on the LHS' is less-or-equal the RHS'
+      because the LHS was sorted (including X) and LHS < RHS.
+
+3. After the loop finishes.
+
+   Either i == begin - 1 or A[i] <= A[i+1].
+
+    * Suppose i == begin - 1. Then is_sorted(A, i+1, end)
+	  is the same as is_sorted(A, begin, end).
+	  
+	* Suppose A[i] <= A[i+1].
+	  Then we can combine  is_sorted(A, begin, i+1)
+      and is_sorted(A, i+1, end) to get is_sorted(A, begin, end).
 
 ## Binary Trees
 
