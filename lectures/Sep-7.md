@@ -183,7 +183,7 @@ List implementation of Sequence
 	     return new ListIter(head);
 	   }
        Iter<T> end() {
-	     return null;
+	     return new ListIter(null);
 	   }
 	   
     }
