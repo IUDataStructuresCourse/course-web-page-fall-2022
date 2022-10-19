@@ -64,7 +64,7 @@ Oct. 3  | [Heaps and Priority Queues](./lectures/Oct-3.md) | Ch. 6 sec. 1-4, 9 |
 Oct. 5  | [Code Review](./lectures/Oct-5.md) |
 Oct. 7  |  | Lab: [HashTable](./HashTable/README.md), [submit test cases](https://autograder.luddy.indiana.edu/web/project/519) 
 Oct. 10 | [Review for Midterm Exam](./lectures/Oct-10.md) | [Hashtable](./HashTable/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/443)
-Oct. 12 | **Midterm Exam**        | [2019 Exam](./midterm-2019.pdf), [2021 Exam](./midterm-2021.pdf)
+Oct. 12 | **Midterm Exam**        | [2019 Exam](./midterm-2019.pdf), [2021 Exam](./midterm-2021.pdf), [2022 Exam A](./midterm-2022-a.pdf) [2022 Exam B](./midterm-2022-b.pdf)
 Oct. 14 | **Fall Break**          | 
 Oct. 17 | [Binomial Queues](./lectures/Oct-17.md) | Ch. 6 sec. 8 |
 Oct. 19 | [Quicksort](./lectures/Oct-19.md)   | | 
