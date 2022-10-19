@@ -101,17 +101,6 @@ orientation or disability can be reported through any of the options:
 
 3) use the IU mobile App (m.iu.edu). Reports can be made anonymously.
 
-**Dean on Call.**
-
-The Dean of Students office provides support for students dealing with
-serious or emergency situations after 5 p.m. in which an immediate
-response is needed and which cannot wait until the next business
-day. Faculty or staff who are concerned about a student’s welfare
-should feel free to call the Dean on Call at (812) 856-7774. This
-number is not to be given to students or families but is for internal
-campus use only. If someone is in immediate danger or experiencing an
-emergency, call 911.
-
 **Boost.**
 
 Indiana University has developed an award-winning smartphone app to
