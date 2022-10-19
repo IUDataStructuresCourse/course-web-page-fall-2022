@@ -67,7 +67,7 @@ Oct. 10 | [Review for Midterm Exam](./lectures/Oct-10.md) | [Hashtable](./HashTa
 Oct. 12 | **Midterm Exam**        | [2019 Exam](./midterm-2019.pdf), [2021 Exam](./midterm-2021.pdf)
 Oct. 14 | **Fall Break**          | 
 Oct. 17 | [Binomial Queues](./lectures/Oct-17.md) | Ch. 6 sec. 8 |
-Oct. 19 | Quicksort   | | 
+Oct. 19 | [Quicksort](./lectures/Oct-19.md)   | | 
 Oct. 21 |             | | Lab: BinomialHeap, [submit test cases](https://autograder.luddy.indiana.edu/web/project/526)
 Oct. 24 |             | | Due: [BinomialHeap](./BinomialHeap/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/466)
 
