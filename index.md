@@ -101,21 +101,11 @@ orientation or disability can be reported through any of the options:
 
 3) use the IU mobile App (m.iu.edu). Reports can be made anonymously.
 
-**Boost.**
-
-Indiana University has developed an award-winning smartphone app to
-help students stay on top of their schoolwork in Canvas. The app is
-called “Boost,” it is available for free to all IU students, and it
-integrates with Canvas to provide reminders about deadlines and other
-helpful notifications. For more information, see
-https://kb.iu.edu/d/atud.
-
 **Counseling and Psychological Services.**
 
 CAPS has expanded their services. For information about the variety of
 services offered to students by CAPS visit:
-http://healthcenter.indiana.edu/counseling/index.shtml.
-
+https://healthcenter.indiana.edu/counseling/index.html
 
 **Disability Services for Students (DSS).**
 
@@ -129,13 +119,6 @@ available to students with disabilities and for the procedures to be
 followed by students and instructors, please visit:
 https://studentaffairs.indiana.edu/disability-services-students/.
 
-**Reporting Conduct and Student Wellness Concerns.**
-
-All members of the IU community including faculty and staff may report
-student conduct and wellness concerns to the Division of Student
-Affairs using an online form located at
-https://studentaffairs.indiana.edu/dean-students/student-concern/index.shtml.
-
 **Students needing additional financial or other assistance.**
 
 The Student Advocates Office (SAO) can help students work through
@@ -143,18 +126,7 @@ personal and academic problems as well as financial difficulties and
 concerns. SAO also assists students working through grade appeals and
 withdrawals from all classes. SAO also has emergency funds for IU
 students experiencing emergency financial crisis
-https://studentaffairs.indiana.edu/student- advocates/.
-
-**Disruptive Students.**
-
-If instructors are confronted by threatening behaviors from students
-their first obligation is to insure the immediate safety of the
-classroom. When in doubt, call IU Police at 9-911 from any campus
-phone or call (812) 855-4111 from off-campus for immediate or
-emergency situations. You may also contact the Dean of Students Office
-at (812) 855-8188. For additional guidance in dealing with difficult
-student situations:
-https://ufc.iu.edu/doc/policies/disruptive-students.pdf.
+https://studentaffairs.indiana.edu/student-advocates/.
 
 **Academic Misconduct.**
 
