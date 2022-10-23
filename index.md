@@ -67,10 +67,11 @@ Oct. 10 | [Review for Midterm Exam](./lectures/Oct-10.md) | [Hashtable](./HashTa
 Oct. 12 | **Midterm Exam**        | [2019 Exam](./midterm-2019.pdf), [2021 Exam](./midterm-2021.pdf), [2022 Exam A](./midterm-2022-a.pdf) [2022 Exam B](./midterm-2022-b.pdf)
 Oct. 14 | **Fall Break**          | 
 Oct. 17 | [Binomial Queues](./lectures/Oct-17.md) | Ch. 6 sec. 8 |
-Oct. 19 | [Quicksort](./lectures/Oct-19.md)   | | 
+Oct. 19 | [Quicksort](./lectures/Oct-19.md)   | Ch. 7, sec. 1-7 | 
 Oct. 21 |             | | Lab: BinomialHeap, [submit test cases](https://autograder.luddy.indiana.edu/web/project/526)
-Oct. 24 |             | | Due: [BinomialHeap](./BinomialHeap/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/466)
-
+Oct. 24 | [Sorting in Linear Time](./lectures-Oct.24.md)  | Ch. 7 sec. 11 | Due: [BinomialHeap](./BinomialHeap/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/466)
+Oct. 26 | Graphs, Topological Order | Ch. 9, sec. 1-2 | 
+Oct. 28 |  | | Lab: [QuickSort](./QuickSort/README.md), [submit tests](https://autograder.luddy.indiana.edu/web/project/527)
 
 **Resources**
 
