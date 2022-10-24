@@ -17,15 +17,30 @@ half-open range [0,k). We can sort them using a technique called
 counting sort that is similar to the one we used for checking
 anagrams.
 
+We'll start by giving some intuition for why the algorithm works.
+Suppose we want to sort the following array.
+
+    A = [2, 8, 7, 1], k = 10
+
+Here's the output of sorting:
+
+    B = [1, 2, 7, 8]
+         0  1  2  3
+
+Let's focus on just one element of the input, say `8`, and think about
+which position it should move to. It belongs at position `3` because
+there are three elements in the array that are less-than `8`.
+
+The main idea behind counting sort is to count the number of elements
+that are less-than (or equal) to each element.
+
+Here's the algorithm:
+
 1. Count how many times each integer appears in the input.
 2. Use those counts to find out how many elements are
    less-than or equal to every element.
 3. Place each number from the input into its correct
    position in the output array.
-
-Example:
-
-    A = [2, 8, 7, 1], k = 10
 
 C[i] is the count for integer i
 
@@ -116,28 +131,27 @@ where does 3 go? 3-1=2
     B = [2, 2, 3, 3, 5, 8]
     L = [0, 0, 0, 2, 4, 4, 5, 5, 5]
 
-**Student pre-lecture assignment**: implement counting_sort in Java.
-    My solution:
+Counting sort in Java:
 
-    ```
-    static void counting_sort(int[] A, int[] B, int k) {
-       int[] C = new int[k+1]; // counts of each element of A
-       int[] L = new int[k+1];  // L[j] = number of elements less or equal j.
-       for (int i = 0; i != A.length; ++i) {
-          ++C[A[i]];
-       }
-       L[0] = C[0];
-       for (int j = 1; j != k+1; ++j) {
-          L[j] = C[j] + L[j-1];
-       }
-       for (int j = A.length - 1; j != -1; --j) {
-          int elt = A[j];
-          int num_le = L[elt];
-          B[num_le - 1] = elt;
-          L[elt] = num_le - 1;
-       }
-    }
-    ```
+```java
+static void counting_sort(int[] A, int[] B, int k) {
+   int[] C = new int[k+1]; // counts of each element of A
+   int[] L = new int[k+1];  // L[j] = number of elements less or equal j.
+   for (int i = 0; i != A.length; ++i) {
+	  ++C[A[i]];
+   }
+   L[0] = C[0];
+   for (int j = 1; j != k+1; ++j) {
+	  L[j] = C[j] + L[j-1];
+   }
+   for (int j = A.length - 1; j != -1; --j) {
+	  int elt = A[j];
+	  int num_le = L[elt];
+	  B[num_le - 1] = elt;
+	  L[elt] = num_le - 1;
+   }
+}
+```
 
 ### Time complexity of counting_sort
 
