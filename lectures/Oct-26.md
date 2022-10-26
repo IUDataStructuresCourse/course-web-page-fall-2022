@@ -54,21 +54,21 @@ lists.
 Example: for the above directed graph the adjacency list
 representation is
 
-	 |0| -> 0
-	 |1| -> 2 -> 4
-	 |2| -> 5
-	 |3| -> 0 -> 5
-	 |4| -> 2
-	 |5| -> 4
+     |0| -> 0
+     |1| -> 2 -> 4
+     |2| -> 5
+     |3| -> 0 -> 5
+     |4| -> 2
+     |5| -> 4
 
 Example: for the above undirected graph the adjacency list
 representation is
 
-	 |0| -> 1 -> 2 -> 4
-	 |1| -> 0 -> 2
-	 |2| -> 1 -> 4 -> 3 -> 0
-	 |3| -> 2 -> 4
-	 |4| -> 0 -> 3 -> 2
+     |0| -> 1 -> 2 -> 4
+     |1| -> 0 -> 2
+     |2| -> 1 -> 4 -> 3 -> 0
+     |3| -> 2 -> 4
+     |4| -> 0 -> 3 -> 2
 
 (Each edge is stored twice.)
 
@@ -89,22 +89,22 @@ The *Adjacency Matrix* representation of a graph is a Boolean matrix.
 
 Example, for the directed graph above.
 
-	  0 1 2 3 4 5
-	0 1 0 0 0 0 0
-	1 0 0 1 0 1 0
-	2 0 0 0 0 0 1
-	3 1 0 0 0 0 1
-	4 0 0 1 0 0 0
-	5 0 0 0 0 1 0
+      0 1 2 3 4 5
+    0 1 0 0 0 0 0
+    1 0 0 1 0 1 0
+    2 0 0 0 0 0 1
+    3 1 0 0 0 0 1
+    4 0 0 1 0 0 0
+    5 0 0 0 0 1 0
 
 Example, for the undirected graph above.
 
-	  0 1 2 3 4
-	0 0 1 1 0 1
-	1 1 0 1 0 0
-	2 1 1 0 1 1
-	3 0 0 1 0 1
-	4 1 0 1 1 0
+      0 1 2 3 4
+    0 0 1 1 0 1
+    1 1 0 1 0 0
+    2 1 1 0 1 1
+    3 0 0 1 0 1
+    4 1 0 1 1 0
 
 Note that the matrix is symmetric.
 
@@ -145,58 +145,58 @@ that depends on it.
 
 Here are many (all?) of the topological orderings:
 
-	a,b, c, d,e, f
-	b,a, c, d,e, f
-	a,b, c, e,d, f
-	b,a, c, e,d, f
-	a,b, d, c,e, f
-	b,a, d, c,e, f
-	c,e, a,b, d, f
-	c,e, b,a, d, f
+    a,b, c, d,e, f
+    b,a, c, d,e, f
+    a,b, c, e,d, f
+    b,a, c, e,d, f
+    a,b, d, c,e, f
+    b,a, d, c,e, f
+    c,e, a,b, d, f
+    c,e, b,a, d, f
 
 ### Knuth's version of Kahn's algorithm for topological sort
 
-	static <V> void topo_sort(Graph<V> G, 
-							  Consumer<V> output,
-							  Map<V,Integer> num_pred) {
-		// initialize the in-degrees to zero
-		for (V u : G.vertices()) {
-			num_pred.put(u, 0);
-		}
-		// compute the in-degree of each vertex
-		for (V u : G.vertices())
-			for (V v : G.adjacent(u))
-			num_pred.put(v, num_pred.get(v) + 1);
+    static <V> void topo_sort(Graph<V> G, 
+                              Consumer<V> output,
+                              Map<V,Integer> num_pred) {
+        // initialize the in-degrees to zero
+        for (V u : G.vertices()) {
+            num_pred.put(u, 0);
+        }
+        // compute the in-degree of each vertex
+        for (V u : G.vertices())
+            for (V v : G.adjacent(u))
+            num_pred.put(v, num_pred.get(v) + 1);
 
-		// collect the vertices with zero in-degree
-		LinkedList<V> zeroes = new LinkedList<V>();
-		for (V v : G.vertices())
-			if (num_pred.get(v) == 0)
-			zeroes.push(v);
+        // collect the vertices with zero in-degree
+        LinkedList<V> zeroes = new LinkedList<V>();
+        for (V v : G.vertices())
+            if (num_pred.get(v) == 0)
+            zeroes.push(v);
 
-		// The main loop outputs a vertex with zero in-degree and subtracts
-		// one from the in-degree of each of its successors, adding them to
-		// the zeroes bag when they reach zero.
-		while (zeroes.size() != 0) {
-			V u = zeroes.pop();
-			output.accept(u);
-			for (V v : G.adjacent(u)) {
-			num_pred.put(v, num_pred.get(v) - 1);
-			if (num_pred.get(v) == 0)
-				zeroes.push(v);
-			}
-		}
-	}
+        // The main loop outputs a vertex with zero in-degree and subtracts
+        // one from the in-degree of each of its successors, adding them to
+        // the zeroes bag when they reach zero.
+        while (zeroes.size() != 0) {
+            V u = zeroes.pop();
+            output.accept(u);
+            for (V v : G.adjacent(u)) {
+            num_pred.put(v, num_pred.get(v) - 1);
+            if (num_pred.get(v) == 0)
+                zeroes.push(v);
+            }
+        }
+    }
 
 Time Complexity of Topological Sort (Knuth's version)
 
 1. Compute in-degrees
 
-	Outer loop processes every vertex: O(n)
+    Outer loop processes every vertex: O(n)
 
-	Outer + inner loop processes every edge: O(m)
+    Outer + inner loop processes every edge: O(m)
 
-	Total: O(n + m)
+    Total: O(n + m)
 
 2. Collect vertices with zero in-degree: O(n)
 
@@ -209,15 +209,15 @@ Total: O(n + m) or because m in O(n²), total is O(n²).
 
 topologically sort the following graph
 
-	V = { belt, jacket, pants, socks, shoes, shirt, tie, undershorts, watch }
+    V = { belt, jacket, pants, socks, shoes, shirt, tie, undershorts, watch }
 
-	E = { belt -> jacket,
-		  pants -> shoes, pants -> belt,
-		  socks -> shoes,
-		  shirt -> tie, shirt -> belt,
-		  tie -> jacket,
-		  undershorts -> pants, undershorts -> shoes }
+    E = { belt -> jacket,
+          pants -> shoes, pants -> belt,
+          socks -> shoes,
+          shirt -> tie, shirt -> belt,
+          tie -> jacket,
+          undershorts -> pants, undershorts -> shoes }
 
 solution: (one of many)
 
-	socks, undershorts, pants, shoes, watch, shirt, belt, tie, jacket
+    socks, undershorts, pants, shoes, watch, shirt, belt, tie, jacket
