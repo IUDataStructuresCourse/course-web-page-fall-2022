@@ -137,19 +137,25 @@ Counting sort in Java:
 static void counting_sort(int[] A, int[] B, int k) {
    int[] C = new int[k+1]; // counts of each element of A
    int[] L = new int[k+1];  // L[j] = number of elements less or equal j.
-   for (int i = 0; i != A.length; ++i) {
+   // stage 1: counting
+   for (int i = 0; i != A.length; ++i) { // O(n)
 	  ++C[A[i]];
    }
+   // stage 2: cummulative sum
    L[0] = C[0];
-   for (int j = 1; j != k+1; ++j) {
+   for (int j = 1; j != k+1; ++j) {    // O(k)
 	  L[j] = C[j] + L[j-1];
    }
-   for (int j = A.length - 1; j != -1; --j) {
+   // stage 3: produce output
+   for (int j = A.length - 1; j != -1; --j) {  // O(n)
 	  int elt = A[j];
 	  int num_le = L[elt];
 	  B[num_le - 1] = elt;
 	  L[elt] = num_le - 1;
    }
+   // total time complexity: O(n + k)
+   // if k is a constant,  O(n)
+   // space complexity: O(k)
 }
 ```
 
@@ -187,10 +193,10 @@ Example:
 
     static void radix_sort(int[] A, int d) {
        int[] B = new int[A.length];
-       for (int i = 0; i != d; ++i) {
-          counting_sort(A, B, 10, extract_digit(i,d));
+       for (int i = 0; i != d; ++i) { // O(n*d)
+          counting_sort(A, B, 10, extract_digit(i,d)); // k=10, O(n+10) = O(n)
           // swap A and B
-          for (int j = 0; j != A.length; ++j) {
+          for (int j = 0; j != A.length; ++j) { // O(n)
              int tmp = A[j];
              A[j] = B[j];
              B[j] = tmp;
@@ -200,8 +206,8 @@ Example:
 
 Had to update `counting_sort` to extract key from element, using function f.
 
-    static void counting_sort(int[] A, int[] B, int k, 
-                              Function<Integer,Integer> f)
+    static void counting_sort<E>(E[] A, int[] B, int k, 
+                                 Function<E,Integer> f)
     {
        int[] C = new int[k+1]; // counts of each element of A
        int[] L = new int[k+1];  // L[j] = number of elements less or equal j.
@@ -238,26 +244,29 @@ length of A to get the bucket number.
     static void bucket_sort(double[] A) {
        // Allocate the buckets 
        ArrayList<ArrayList<Double>> B = new ArrayList<>();
-       for (int i = 0; i != A.length; ++i) {
+       for (int i = 0; i != A.length; ++i) { // O(n)
           B.add(new ArrayList<Double>());
        }
        // Distribute the elements of A to the buckets
-       for (int i = 0; i != A.length; ++i) {
-          int bucket = (int)Math.floor(A[i] * A.length);
-          B.get(bucket).add(A[i]);
+       for (int i = 0; i != A.length; ++i) { // O(n)
+          int bucket = (int)Math.floor(A[i] * A.length); // O(1)
+          B.get(bucket).add(A[i]); // O(1)
        }
        // Sort each bucket
-       for (int i = 0; i != B.size(); ++i) {
-          B.get(i).sort((Double x, Double y) -> x < y ? -1 : (x > y) ? 1 : 0);
+       for (int i = 0; i != B.size(); ++i) { // n iter, 
+          B.get(i).sort((Double x, Double y) -> x < y ? -1 : (x > y) ? 1 : 0); // worst:O(n log n)
+		                                                                       // average: O(1)
        }
        // Put the results back in A
        int k = 0;
-       for (int i = 0; i != B.size(); ++i) {
-          for (int j = 0; j != B.get(i).size(); ++j) {
-             A[k] = B.get(i).get(j);
+       for (int i = 0; i != B.size(); ++i) { // n iters, O(n^2)? really O(n) 
+          for (int j = 0; j != B.get(i).size(); ++j) { // n iters
+             A[k] = B.get(i).get(j);  // O(1) , really once per input element
              ++k;
           }
        }
+	   // total: average O(n)
+	   // worst O(n^2 log n)
     }
 
 Time complexity of bucket_sort:

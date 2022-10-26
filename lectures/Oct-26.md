@@ -166,13 +166,13 @@ Here are many (all?) of the topological orderings:
         // compute the in-degree of each vertex
         for (V u : G.vertices())
             for (V v : G.adjacent(u))
-            num_pred.put(v, num_pred.get(v) + 1);
+                num_pred.put(v, num_pred.get(v) + 1);
 
         // collect the vertices with zero in-degree
         LinkedList<V> zeroes = new LinkedList<V>();
         for (V v : G.vertices())
             if (num_pred.get(v) == 0)
-            zeroes.push(v);
+                zeroes.push(v);
 
         // The main loop outputs a vertex with zero in-degree and subtracts
         // one from the in-degree of each of its successors, adding them to
