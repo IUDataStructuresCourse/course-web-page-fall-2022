@@ -17,6 +17,7 @@ The starter code and initial tests are in the following files:
 * [`Sequence.java`](./Sequence.java)
 * [`ArraySequence.java`](./ArraySequence.java)
 * [`LinkedList.java`](./LinkedList.java)
+* [`Algorithms.java`](./Algorithms.java)
 
 # Testing
 
