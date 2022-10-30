@@ -35,7 +35,7 @@ Here is the starter code for this lab:
 
 ## Submission
 
-Submit your file `StudentsTests.java` to the autograder,
+Submit your file `StudentsTest.java` to the autograder,
 project `ConnectedComponentsTest`.
 
 Submit your file `ConnectedComponents.java` to the autograder,
