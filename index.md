@@ -74,8 +74,8 @@ Oct. 26 | [Graphs, Topological Order](./lectures/Oct-26.md) | Ch. 9, sec. 1-2 |
 Oct. 28 |  | | Lab: [QuickSort](./QuickSort/README.md), [submit tests](https://autograder.luddy.indiana.edu/web/project/527)
 Oct. 31 | [Breadth and Depth-first search](./lectures/Oct-31.md) |  | Due: [QuickSort](./QuickSort/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/464)
 Nov. 2  | |  | Due: [Homework Chapter 5 and 6 Exercises](./HW-Ch5-6.md)
-Nov. 4  | |  | Lab: Connected Components, submit tests
-Nov. 7  | |  | Due: Connected Components
+Nov. 4  | |  | Lab: [Connected Components](./ConnectedComponents/README.md), [submit tests](https://autograder.luddy.indiana.edu/web/project/532)
+Nov. 7  | |  | Due: [Connected Components](./ConnectedComponents/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/467)
 
 **Resources**
 
