@@ -72,8 +72,10 @@ Oct. 21 |             | | Lab: BinomialHeap, [submit test cases](https://autogra
 Oct. 24 | [Sorting in Linear Time](./lectures/Oct-24.md)  | Ch. 7 sec. 11 | Due: [BinomialHeap](./BinomialHeap/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/466)
 Oct. 26 | [Graphs, Topological Order](./lectures/Oct-26.md) | Ch. 9, sec. 1-2 | 
 Oct. 28 |  | | Lab: [QuickSort](./QuickSort/README.md), [submit tests](https://autograder.luddy.indiana.edu/web/project/527)
-Oct. 31 | |  | Due: [QuickSort](./QuickSort/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/464)
+Oct. 31 | [Breadth and Depth-first search](./lectures/Oct-31.md) |  | Due: [QuickSort](./QuickSort/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/464)
 Nov. 2  | |  | Due: [Homework Chapter 5 and 6 Exercises](./HW-Ch5-6.md)
+Nov. 4  | |  | Lab: Connected Components, submit tests
+Nov. 7  | |  | Due: Connected Components
 
 **Resources**
 
