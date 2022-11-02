@@ -11,8 +11,8 @@ Solutions (there are multiple depth-first trees)
 ![**Solution 2 DFS tree.**](./digraph8.png)
 
 
-One algorithm for DFS is essentially the same as BFS, but replaces the
-queue with a stack.
+There are two ways to implement DFS. The first is like the algorithm
+for BFS, but replaces the queue with a stack.
 
     while not stack.empty()
 	  u = stack.pop()
@@ -22,7 +22,7 @@ queue with a stack.
 		  parent[v] = u
 		  stack.push(v)
 
-The other algorithm for DFS is recursive:
+The second algorithm for DFS is recursive:
 
     DFS(u, G, parent, visited) =
 	  for v in G.adjacent(u)
@@ -32,6 +32,8 @@ The other algorithm for DFS is recursive:
 		  DFS(v, G, parent, visited)
 		
 ## Edge Categories
+
+In the following we'll use this example graph:
 
 ![**Depth-first search starting from vertex g.**](./digraph2.png)
 
