@@ -1,4 +1,4 @@
-# C343 Project - Routing Wires on a Chip
+# Project - Routing Wires on a Chip
 
 ## Project Description
 
