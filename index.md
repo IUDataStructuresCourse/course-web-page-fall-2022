@@ -75,7 +75,7 @@ Oct. 28 |  | | Lab: [QuickSort](./QuickSort/README.md), [submit tests](https://a
 Oct. 31 | [Breadth and Depth-first search](./lectures/Oct-31.md) |  | Due: [QuickSort](./QuickSort/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/464)
 Nov. 2  | [DFS cont'd, Shortest Paths](./lectures/Nov-2.md) |  | Due: [Homework Chapter 5 and 6 Exercises](./HW-Ch5-6.md)
 Nov. 4  | |  | Lab: [Connected Components](./ConnectedComponents/README.md), [submit tests](https://autograder.luddy.indiana.edu/web/project/532)
-Nov. 7  | |  | Due: [Connected Components](./ConnectedComponents/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/467)
+Nov. 7  | [Union Find](./lectures/Nov-7.md) |  | Due: [Connected Components](./ConnectedComponents/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/467)
 
 **Resources**
 
