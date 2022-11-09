@@ -76,6 +76,7 @@ Oct. 31 | [Breadth and Depth-first search](./lectures/Oct-31.md) |  | Due: [Quic
 Nov. 2  | [DFS cont'd, Shortest Paths](./lectures/Nov-2.md) |  | Due: [Homework Chapter 5 and 6 Exercises](./HW-Ch5-6.md)
 Nov. 4  | |  | Lab: [Connected Components](./ConnectedComponents/README.md), [submit tests](https://autograder.luddy.indiana.edu/web/project/532)
 Nov. 7  | [Union Find](./lectures/Nov-7.md) |  | Due: [Connected Components](./ConnectedComponents/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/467)
+Nov. 9 | [Minimum Spanning Tree](./lectures/Nov-9.md)
 Nov. 18 | | | Due: [Routing Wires Project](./RoutingWires/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/469)
 Nov. 25 | | | HuffmanCoding submit test cases
 Nov. 28 | | | Due: HuffmanCoding submit
