@@ -200,18 +200,7 @@ because m < n² and therefore log m < 2 log n.
 
 apply Kruskal's to the following graph (didn't get to this)
 
-             E-4-F
-            /   /|
-           1   8 2
-          /   /  |
-         A-2-B   G
-         |   |  /|
-         3   1 4 |
-         |   |/  |
-         C-5-D   1
-          \  |   |
-           4 1  /
-             H-/
+![**Graph for MST student exercise.**](./graph5.png)
 
 Solution: sorted edges: 
 
@@ -224,15 +213,4 @@ Solution: sorted edges:
 
 An MST of weight 11: (there are other MST's)
 
-             E   F
-            /    |
-           /     |
-          /      |
-         A---B   G
-         |   |   |
-         |   |   |
-         |   |   |
-         C   D   |
-             |   |
-             |  /
-             H-/
+![**Solution for MST student exercise.**](./graph6.png)
