@@ -103,7 +103,7 @@ safe).
 
 ## Kruskal's Algorithm
 
-Main idea: process the edges from lightest to heaviest
+Main idea: process all the edges from lightest to heaviest
 
 Demo of Kruskal's algorithm
 
