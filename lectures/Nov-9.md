@@ -48,6 +48,9 @@ We'll need some definitions to lead up to the answer.
   or equal any other edge that crosses the cut.
 - A cut *respects* a set A of edges if no edge in A crosses the cut.
 
+The following theorem tells us that to find a safe edge, it suffices
+to find a light edge.
+
 **Theorem 23.1**
 Let A be a subset of some MST of G=(V,E). Let (S,V-S) be a cut of G
 that respects A. Let (u,v) be a light edge wrt. the cut. Then
@@ -56,11 +59,11 @@ that respects A. Let (u,v) be a light edge wrt. the cut. Then
 **Proof.**
 Let T be a MST of G that includes A.
 
-* Case (u,v) in T: Then trivially, A ∪ {(u,v)} ≤ T.
+* Case (u,v) in T: Then trivially, A ∪ {(u,v)} ⊆ T.
 
 * Case (u,v) not in T:
 
-    We're going to construct another MST T' such that A ∪ {(u,v)} ≤ T'.
+    We're going to construct another MST T' such that A ∪ {(u,v)} ⊆ T'.
     
     Because T is spanning, u and v both are in T, so there
     is already a path from u to v in T. Thus, (u,v) completes a cycle.
@@ -84,9 +87,9 @@ Let T be a MST of G that includes A.
 
     It remains to show that (u,v) is a safe edge, that is,
     
-    A ∪ {(u,v)} ≤ T - {(x,y)} ∪ {(u,v)}
+    A ∪ {(u,v)} ⊆ T - {(x,y)} ∪ {(u,v)}
     
-    We had A ≤ T, so we need to prove that (x,y) not in A,
+    We had A ⊆ T, so we need to prove that (x,y) not in A,
     but we have that because the cut respects A.
 
 **QED**
