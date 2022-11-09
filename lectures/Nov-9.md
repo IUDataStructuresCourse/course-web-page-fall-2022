@@ -199,18 +199,18 @@ because m < n² and therefore lg m < 2 lg n.
 
 apply Kruskal's to the following graph (didn't get to this)
 
-			 E-4-F
-			/   /|
-		   1   8 2
-		  /   /  |
-		 A-2-B   G
-		 |   |  /|
-		 3   1 4 |
-		 |   |/  |
-		 C-5-D   1
-		  \  |   |
-		   4 1  /
-			 H-/
+             E-4-F
+            /   /|
+           1   8 2
+          /   /  |
+         A-2-B   G
+         |   |  /|
+         3   1 4 |
+         |   |/  |
+         C-5-D   1
+          \  |   |
+           4 1  /
+             H-/
 
 Solution: sorted edges: 
 
@@ -223,15 +223,15 @@ Solution: sorted edges:
 
 An MST of weight 11: (there are other MST's)
 
-			 E   F
-			/    |
-		   /     |
-		  /      |
-		 A---B   G
-		 |   |   |
-		 |   |   |
-		 |   |   |
-		 C   D   |
-			 |   |
-			 |  /
-			 H-/
+             E   F
+            /    |
+           /     |
+          /      |
+         A---B   G
+         |   |   |
+         |   |   |
+         |   |   |
+         C   D   |
+             |   |
+             |  /
+             H-/
