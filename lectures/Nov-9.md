@@ -166,23 +166,23 @@ Demo of Kruskal's algorithm
 
 ### Implementation of Kruskal's algorithm in Java
 
-	static <V> void kruskal_mst(EdgeGraph<V> G, 
-								Map<V,Map<V,Double>> weight,
-								ArrayList<Edge<V>> T, 
-								DisjointSets<V> sets)
-	{
-		for (V v : G.vertices())
-			sets.make_set(v);
-		ArrayList<Edge<V>> edges = new ArrayList<Edge<V>>();
-		for (Edge<V> e : G.edges())
-			edges.add(e);
-		sort(edges, new CompareWeight<V>(weight));
-		for (Edge<V> e : edges) 
-			if (sets.find(e.source()) != sets.find(e.target())) {
-				T.add(e);
-				sets.union(e.source(), e.target());
-			}
-	}
+    static <V> void kruskal_mst(EdgeGraph<V> G, 
+                                Map<V,Map<V,Double>> weight,
+                                ArrayList<Edge<V>> T, 
+                                DisjointSets<V> sets)
+    {
+        for (V v : G.vertices())
+            sets.make_set(v);
+        ArrayList<Edge<V>> edges = new ArrayList<Edge<V>>();
+        for (Edge<V> e : G.edges())
+            edges.add(e);
+        sort(edges, new CompareWeight<V>(weight));
+        for (Edge<V> e : edges) 
+            if (sets.find(e.source()) != sets.find(e.target())) {
+                T.add(e);
+                sets.union(e.source(), e.target());
+            }
+    }
 
 ### Time complexity
     
