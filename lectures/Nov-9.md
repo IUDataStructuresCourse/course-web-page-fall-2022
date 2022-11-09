@@ -187,14 +187,14 @@ Demo of Kruskal's algorithm
 
 ### Time complexity
     
-* initialize disjoint sets: O(n alpha(n))
+* initialize disjoint sets: O(n α(n))
 * sort: O(m log m)
 * main loop: O(m α(n))
 
 The dominating cost is the sorting.
-So the overall time complexity is O(m lg m)
-which can be instead stated as O(m lg n)
-because m < n² and therefore lg m < 2 lg n.
+So the overall time complexity is O(m log m)
+which can be instead stated as O(m log n)
+because m < n² and therefore log m < 2 log n.
 
 ### Student group work
 
