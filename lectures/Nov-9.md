@@ -7,11 +7,11 @@ amount of cable that you use.
 **Definition.** A *spanning tree* is a subset of edges of a graph that form a
 tree and that connect all the vertices in the graph.
 
-**Definition.** Given an edge-weighted graph $G$, the *minimum spanning tree
-problem* is to find a spanning tree of $G$ whose total weight is less or
-equal to any other spanning tree. We write $T_1 \le T_2$ when the total
-weight of the edges in tree $T_1$ is less-than or equal to the
-total weight of the edges in tree $T_2$.
+**Definition.** Given an edge-weighted graph G, the *minimum spanning tree
+problem* is to find a spanning tree of G whose total weight is less or
+equal to any other spanning tree. We write T₁ ≤ T₂ when the total
+weight of the edges in tree T₁ is less-than or equal to the
+total weight of the edges in tree T₂.
 
 ![**Example graph for MST problem.**](./graph2.png)
 
@@ -56,11 +56,11 @@ that respects A. Let (u,v) be a light edge wrt. the cut. Then
 **Proof.**
 Let T be a MST of G that includes A.
 
-* Case (u,v) in T: Then trivially, A \cup {(u,v)} ≤ T.
+* Case (u,v) in T: Then trivially, A ∪ {(u,v)} ≤ T.
 
 * Case (u,v) not in T:
 
-    We're going to construct another MST T' such that A \cup {(u,v)} ≤ T'.
+    We're going to construct another MST T' such that A ∪ {(u,v)} ≤ T'.
     
     Because T is spanning, u and v both are in T, so there
     is already a path from u to v in T. Thus, (u,v) completes a cycle.
@@ -76,156 +76,159 @@ Let T be a MST of G that includes A.
 
     We form the new MST T' by removing (x,y) and adding (u,v):
     
-    T' = T - {(x,y)} \cup {(u,v)}
+    T' = T - {(x,y)} ∪ {(u,v)}
     
     Now we need to show that T' is an MST.
-    We know that T' \le T because (u,v) is a light edge,
+    We know that T' ≤ T because (u,v) is a light edge,
     so its weight is less-or-equal to that of (x,y). So T' is an MST.
 
     It remains to show that (u,v) is a safe edge, that is,
     
-    A \cup {(u,v)} ≤ T - {(x,y)} \cup {(u,v)}
+    A ∪ {(u,v)} ≤ T - {(x,y)} ∪ {(u,v)}
     
     We had A ≤ T, so we need to prove that (x,y) not in A,
     but we have that because the cut respects A.
 
 **QED**
 
-* We can think of MST algorithms as maintaining a forest of
-  trees, where all the tree edges are in the set A. Initially, each
-  vertex is in it's own tree because A={}.  At each step, we
-  merge two trees into a single tree by identifying the lightest edge
-  connecting them (such an edge is safe).
+We can think of MST algorithms as maintaining a forest of trees, where
+all the tree edges are in the set A. Initially, each vertex is in it's
+own tree because A={}.  At each step, we merge two trees into a single
+tree by identifying the lightest edge connecting them (such an edge is
+safe).
 
-* Kruskal's Algorithm
+## Kruskal's Algorithm
 
-    - Main idea: process the edges from lightest to heaviest
+Main idea: process the edges from lightest to heaviest
 
-    - Demo of Kruskal's algorithm
+Demo of Kruskal's algorithm
 
-        ![**Example graph for MST problem.**](./graph2.png)
+![**Example graph for MST problem.**](./graph2.png)
 
-            sorted list of edges:
-            A-1-B, B-2-E, C-2-F, A-3-E, D-4-E, A-4-D, D-4-B, C-4-E, E-7-F
+	sorted list of edges:
+	A-1-B, B-2-E, C-2-F, A-3-E, D-4-E, A-4-D, D-4-B, C-4-E, E-7-F
 
-        * Process A-1-B, union {A} and {B}:
+* Process A-1-B, union {A} and {B}:
 
-                    A--B  C
+			A--B  C
 
-                    D  E  F
+			D  E  F
 
-        * Process B-2-E, union {A,B} and {E}
+* Process B-2-E, union {A,B} and {E}
 
-                    A--B  C
-                       |
-                    D  E  F
+			A--B  C
+			   |
+			D  E  F
 
-        * Process C-2-F, union {C} and {F}
+* Process C-2-F, union {C} and {F}
 
-                    A--B  C
-                       |  |
-                    D  E  F
+			A--B  C
+			   |  |
+			D  E  F
 
-        * Process A-3-E, do nothing
+* Process A-3-E, do nothing
 
-        * Process D-4-E, union {A,B,E} and {D}
+* Process D-4-E, union {A,B,E} and {D}
 
-                    A--B  C
-                       |  |
-                    D--E  F
+			A--B  C
+			   |  |
+			D--E  F
 
-        * Process A-4-D, do nothing
+* Process A-4-D, do nothing
 
-        * Process D-4-B, do nothing
+* Process D-4-B, do nothing
 
-        * Process C-4-E, union {A,B,D,E} and {C,F} 
+* Process C-4-E, union {A,B,D,E} and {C,F} 
 
-                    A--B  C
-                       | /|
-                       |/ |
-                    D--E  F
+			A--B  C
+			   | /|
+			   |/ |
+			D--E  F
 
-    - Implementation Ideas:
 
-        * sort the edges by increasing weight to make it easy to
-          process lighter edges before heavier edges.
+### Implementation Ideas
 
-        * use union-find (aka DisjointSets) to keep track of the trees.
-          Recall how DisjointSets works:
-             - We represent each partition as a tree whose 
-               root is the representative.
-             - The tree is stored just in terms of "parent" pointers.
-             - sets.make_set(x) sets the parent pointer of x to x.
-             - sets.find_set(x) walks up the parent pointers to the root.
-             - sets.union(x,y) sets the parent point of x to y (or vice versa).
+* sort the edges by increasing weight to make it easy to
+  process lighter edges before heavier edges.
 
-    - Implementation of Kruskal's algorithm in Java
+* use union-find (aka DisjointSets) to keep track of the trees.
+  Recall how DisjointSets works:
+  
+	 - We represent each partition as a tree whose 
+	   root is the representative.
+	 - The tree is stored just in terms of "parent" pointers.
+	 - sets.make_set(x) sets the parent pointer of x to x.
+	 - sets.find_set(x) walks up the parent pointers to the root.
+	 - sets.union(x,y) sets the parent point of x to y (or vice versa).
 
-                static <V> void kruskal_mst(EdgeGraph<V> G, 
-                                            Map<V,Map<V,Double>> weight,
-                                            ArrayList<Edge<V>> T, 
-                                            DisjointSets<V> sets)
-                {
-                    for (V v : G.vertices())
-                        sets.make_set(v);
-                    ArrayList<Edge<V>> edges = new ArrayList<Edge<V>>();
-                    for (Edge<V> e : G.edges())
-                        edges.add(e);
-                    sort(edges, new CompareWeight<V>(weight));
-                    for (Edge<V> e : edges) 
-                        if (sets.find(e.source()) != sets.find(e.target())) {
-                            T.add(e);
-                            sets.union(e.source(), e.target());
-                        }
-                }
+### Implementation of Kruskal's algorithm in Java
 
-    - Time complexity
+	static <V> void kruskal_mst(EdgeGraph<V> G, 
+								Map<V,Map<V,Double>> weight,
+								ArrayList<Edge<V>> T, 
+								DisjointSets<V> sets)
+	{
+		for (V v : G.vertices())
+			sets.make_set(v);
+		ArrayList<Edge<V>> edges = new ArrayList<Edge<V>>();
+		for (Edge<V> e : G.edges())
+			edges.add(e);
+		sort(edges, new CompareWeight<V>(weight));
+		for (Edge<V> e : edges) 
+			if (sets.find(e.source()) != sets.find(e.target())) {
+				T.add(e);
+				sets.union(e.source(), e.target());
+			}
+	}
+
+### Time complexity
     
-        * initialize disjoint sets: O(n alpha(n))
-        * sort: O(m lg m)
-        * main loop: O(m alpha(n))
+* initialize disjoint sets: O(n alpha(n))
+* sort: O(m lg m)
+* main loop: O(m alpha(n))
 
-        The dominating cost is the sorting.
-        So the overall time complexity is O(m lg m)
-        which can be instead stated as O(m lg n)
-        because m < n² and therefore lg m < 2 lg n.
+The dominating cost is the sorting.
+So the overall time complexity is O(m lg m)
+which can be instead stated as O(m lg n)
+because m < n² and therefore lg m < 2 lg n.
 
-    - Student group work: apply Kruskal's to the following graph (didn't
-      get to this)
+### Student group work
 
-                     E-4-F
-                    /   /|
-                   1   8 2
-                  /   /  |
-                 A-2-B   G
-                 |   |  /|
-                 3   1 4 |
-                 |   |/  |
-                 C-5-D   1
-                  \  |   |
-                   4 1  /
-                     H-/
+apply Kruskal's to the following graph (didn't get to this)
 
-        Solution: sorted edges: 
+			 E-4-F
+			/   /|
+		   1   8 2
+		  /   /  |
+		 A-2-B   G
+		 |   |  /|
+		 3   1 4 |
+		 |   |/  |
+		 C-5-D   1
+		  \  |   |
+		   4 1  /
+			 H-/
 
-                   A-1-E, G-1-H, B-1-D, D-1-H
-                   F-2-G, A-2-B, 
-                   A-3-C,
-                   E-4-F, C-4-H, D-4-G
-                   C-5-D, 
-                   B-8-F
+Solution: sorted edges: 
 
-        An MST of weight 11: (there are other MST's)
+		   A-1-E, G-1-H, B-1-D, D-1-H
+		   F-2-G, A-2-B, 
+		   A-3-C,
+		   E-4-F, C-4-H, D-4-G
+		   C-5-D, 
+		   B-8-F
 
-                     E   F
-                    /    |
-                   /     |
-                  /      |
-                 A---B   G
-                 |   |   |
-                 |   |   |
-                 |   |   |
-                 C   D   |
-                     |   |
-                     |  /
-                     H-/
+An MST of weight 11: (there are other MST's)
+
+			 E   F
+			/    |
+		   /     |
+		  /      |
+		 A---B   G
+		 |   |   |
+		 |   |   |
+		 |   |   |
+		 C   D   |
+			 |   |
+			 |  /
+			 H-/
