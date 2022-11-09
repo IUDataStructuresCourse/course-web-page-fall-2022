@@ -65,7 +65,7 @@ Let T be a MST of G that includes A.
 
     We're going to construct another MST T' such that A ∪ {(u,v)} ⊆ T'.
     
-    Because T is spanning, u and v both are in T, so there
+    Because T is spanning, u and v are in T, so there
     is already a path from u to v in T. Thus, (u,v) completes a cycle.
     A cycle with a crossing edge must have another crossing
     edge as shown in the following diagram.
