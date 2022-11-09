@@ -67,13 +67,14 @@ Let T be a MST of G that includes A.
     
     Because T is spanning, u and v are in T, so there
     is already a path from u to v in T. Thus, (u,v) completes a cycle.
+	Recall the premise that (u,v) crosses the cut (S,V-S).
     A cycle with a crossing edge must have another crossing
     edge as shown in the following diagram.
     Let that other crossing edge be (x,y) . 
 
            u - - - x
            |       |
-        -----------------
+        ----------------- cut
            |       |
            v - - - y
 
