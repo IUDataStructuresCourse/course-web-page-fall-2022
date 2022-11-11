@@ -78,8 +78,9 @@ Nov. 4  | |  | Lab: [Connected Components](./ConnectedComponents/README.md), [su
 Nov. 7  | [Union Find](./lectures/Nov-7.md) |  | Due: [Connected Components](./ConnectedComponents/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/467)
 Nov. 9 | [Minimum Spanning Tree](./lectures/Nov-9.md)
 Nov. 18 | | | Due: [Routing Wires Project](./RoutingWires/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/469)
-Nov. 25 | | | HuffmanCoding submit test cases
-Nov. 28 | | | Due: HuffmanCoding submit
+Nov. 20 - Nov. 27 | **Thanksgiving Break** | |
+Nov. 28 | | | HuffmanCoding submit test cases
+Nov. 30 | | | Due: HuffmanCoding submit
 Dec. 9  | | | Due: DNA Alignment
 
 **Resources**
