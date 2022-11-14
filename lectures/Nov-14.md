@@ -9,16 +9,16 @@ The general recipe for backtracking is to write a recursive function
 of the following form.
 
     solve(partialSolution) =
-	  if prune(partialSolution) 
-	    return null
-	  if accept(partialSolution)
-	    return partialSolution
-	  else
-	    for every way to extend partialSolution to partialSolution2:
-		  partialSolution3 = solve(partialSolution2)
-		  if partialSolution3 != null
-		    return partialSolution3
-	    return null
+      if prune(partialSolution) 
+        return null
+      if accept(partialSolution)
+        return partialSolution
+      else
+        for every way to extend partialSolution to partialSolution2:
+          partialSolution3 = solve(partialSolution2)
+          if partialSolution3 != null
+            return partialSolution3
+        return null
 
 Example: Sudoku (world's hardest by the mathematician Arto Inkala)
 
