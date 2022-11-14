@@ -72,11 +72,12 @@ Oct. 21 |             | | Lab: BinomialHeap, [submit test cases](https://autogra
 Oct. 24 | [Sorting in Linear Time](./lectures/Oct-24.md)  | Ch. 7 sec. 11 | Due: [BinomialHeap](./BinomialHeap/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/466)
 Oct. 26 | [Graphs, Topological Order](./lectures/Oct-26.md) | Ch. 9, sec. 1-2 | 
 Oct. 28 |  | | Lab: [QuickSort](./QuickSort/README.md), [submit tests](https://autograder.luddy.indiana.edu/web/project/527)
-Oct. 31 | [Breadth and Depth-first search](./lectures/Oct-31.md) |  | Due: [QuickSort](./QuickSort/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/464)
-Nov. 2  | [DFS cont'd, Shortest Paths](./lectures/Nov-2.md) |  | Due: [Homework Chapter 5 and 6 Exercises](./HW-Ch5-6.md)
+Oct. 31 | [Breadth and Depth-first search](./lectures/Oct-31.md) | Ch. 9 sec. 3 | Due: [QuickSort](./QuickSort/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/464)
+Nov. 2  | [DFS cont'd, Shortest Paths](./lectures/Nov-2.md) | Ch. 9 sec. 6 | Due: [Homework Chapter 5 and 6 Exercises](./HW-Ch5-6.md)
 Nov. 4  | |  | Lab: [Connected Components](./ConnectedComponents/README.md), [submit tests](https://autograder.luddy.indiana.edu/web/project/532)
-Nov. 7  | [Union Find](./lectures/Nov-7.md) |  | Due: [Connected Components](./ConnectedComponents/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/467)
-Nov. 9 | [Minimum Spanning Tree](./lectures/Nov-9.md)
+Nov. 7  | [Union Find](./lectures/Nov-7.md) | Ch. 8 | Due: [Connected Components](./ConnectedComponents/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/467)
+Nov. 9 | [Minimum Spanning Tree](./lectures/Nov-9.md) | Ch. 9 sec. 5 | 
+Nov. 14 | [Backtracking](./lectures/Nov-14.md)        | Ch. 10 sec. 5 | 
 Nov. 18 | | | Due: [Routing Wires Project](./RoutingWires/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/469)
 Nov. 20 - Nov. 27 | **Thanksgiving Break** | |
 Nov. 28 | | | HuffmanCoding submit test cases
