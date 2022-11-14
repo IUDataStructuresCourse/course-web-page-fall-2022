@@ -5,6 +5,21 @@ pruning. It is applicable anytime a solution to the problem can be
 broken into partial solutions, and there is a way to prune partial
 solutions that can't be extended to a full solution.
 
+The general recipe for backtracking is to write a recursive function
+of the following form.
+
+    solve(partialSolution) =
+	  if prune(partialSolution) 
+	    return null
+	  if accept(partialSolution)
+	    return partialSolution
+	  else
+	    for every way to extend partialSolution to partialSolution2:
+		  partialSolution3 = solve(partialSolution2)
+		  if partialSolution3 != null
+		    return partialSolution3
+	    return null
+
 Example: Sudoku (world's hardest by the mathematician Arto Inkala)
 
     800 000 000
