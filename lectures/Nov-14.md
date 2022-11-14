@@ -36,6 +36,16 @@ valid choices.
 We succeed, and `accept` a board, if all the squares have been filled
 in with non-zero numbers.
 
+    static boolean accept(int[][] board, int m, int n) {
+        for (int i = 0; i != m; ++i) {
+            for (int j = 0; j != n; ++j) {
+                if (board[i][j] == 0)
+                    return false;
+            }
+        }
+        return true;
+    }
+
 If there are still choices to be made, the question is which square to
 fill-in next. 
 
