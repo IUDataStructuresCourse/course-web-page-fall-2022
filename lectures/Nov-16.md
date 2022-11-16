@@ -99,17 +99,24 @@ Can we make an optimal choice without seeing all combinations?
 
 Proof that this greedy choice is optimal:
       
-Suppose that we have an optimal solution A, that is, a maximal set
-of activities that do not conflict with each other. Now the greedy
-choice is the activity x that finishes first.  If activity x is in
-A, then we are done.  On the other hand, suppose the activity x is
-not in A.  Let x' be the first activity to finish amongst those in
-A.  We can replace x' with x to get a new solution. That is, let
-A' = (A - {x'}) ∪ {x}. The set A' is also an optimal solution
+Suppose that we have some other optimal solution A, that is, a maximal
+set of activities that do not conflict with each other. Let's compare
+that solution to the one we obtain by greedy choice, and show that
+greedy choice yields a solution that is just as good and therefore
+optimal.
+
+Consider our first greedy choice, that is, the activity x that
+finishes first.  If activity x is in A, then of course choosing x is
+just as good as choosing x!  On the other hand, suppose the activity x
+is not in A.  Let x' be the first activity to finish amongst those in
+A.  We can replace x' with x to get a new optimal solution. That is,
+let A' = (A - {x'}) ∪ {x}. The set A' is also an optimal solution
 because x does not conflict with any of the other activities: its
 finish time is less than that of x', and therefore, less than the
-start time of any other activity in A.  Also, the size of A' is
-the same as A.
+start time of any other activity in A.  Also, the size of A' is the
+same as A. We can then repeat the above reasoning, comparing the next
+greedy choice to the optimal solution A'.
+
 
 ### Implementation of Activity Selection
 
@@ -249,7 +256,7 @@ occurences).
       
 We work from back to front with respect to the encoding, choosing
 which bits for which words. We want to pick the lowest frequency
-words, because the longest codes go the farthest back.
+words first, because the longest codes go the farthest back.
 
 Intuition: make the choice that uses the fewest bits for the final
 encoded string.
