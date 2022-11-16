@@ -38,13 +38,12 @@ and end points of a wire/path are marked with a number assigned to
 that path. All the other cells contain the value 0.
 
 Your function `findPaths` in the `Routing` class should use this grid
-to connect a source and a destination with a path, avoiding
-points that lie on an obstacle. You should mark the
-grid once a path has been found for a pair of points, thus preventing
-overlapping of paths. That is, mark all the points in a path with
-the same number as the start and end point. The `checkCorrectness` function
-in the `Drive` class checks for these conditions to verify the correctness
-of your solution.
+to connect a source and a destination with a path, avoiding points
+that lie on an obstacle. You should mark the grid once a path has been
+found for a pair of points, thus preventing overlapping of paths. That
+is, mark all the points in a path with the same number as the start
+and end point. The autograder checks these conditions to verify the
+correctness of your solution.
 
 Note that a path can have the same source and destination points.
 
