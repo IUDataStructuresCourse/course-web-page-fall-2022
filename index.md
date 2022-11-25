@@ -82,8 +82,8 @@ Nov. 16 | [Greedy Algorithms](./lectures/Nov-16.md) |
 Nov. 18 | | | Due: [Routing Wires Project](./RoutingWires/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/469)
 Nov. 20 - Nov. 27 | **Thanksgiving Break** | |
 Nov. 28 | Dynamic Programming | | 
-Nov. 30 | DNA Alignment | | HuffmanCoding [submit test cases](https://autograder.luddy.indiana.edu/web/project/536)
-Dec. 2  |  | | Due: HuffmanCoding [submit](https://autograder.luddy.indiana.edu/web/project/468)
+Nov. 30 | DNA Alignment | | [HuffmanCoding](https://iu.instructure.com/courses/2081904/assignments/14231139) [submit test cases](https://autograder.luddy.indiana.edu/web/project/536)
+Dec. 2  |  | | Due: [HuffmanCoding](https://iu.instructure.com/courses/2081904/assignments/14231139) [submit](https://autograder.luddy.indiana.edu/web/project/468)
 Dec. 5  | TDB |
 Dec. 7  | Review for Final Exam | 
 Dec. 9  | | | Due: DNA Alignment
