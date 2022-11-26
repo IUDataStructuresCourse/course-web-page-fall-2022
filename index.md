@@ -89,6 +89,7 @@ Dec. 7  | Review for Final Exam |
 Dec. 9  | | | Due: DNA Alignment
 Dec. 12 | **Final Exam** | 5:20-7:20pm in class
 
+
 **Resources**
 
 * [Autograder](https://autograder.luddy.indiana.edu/web/course/39) for
