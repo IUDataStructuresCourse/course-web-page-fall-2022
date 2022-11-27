@@ -29,22 +29,22 @@ Example table:
 	length: 1  2  3  4  5  6  7  8  9 10
 	price:  1  5  8  9 10 17 17 20 24 30
 
-Let p_i be the price for a continuous rod of length i
+Let `p[i]` be the price for a continuous rod of length i
 (the second row in the above table).
 
-Let r_n be the optimal total price for a rod of length n.
+Let `r[n]` be the optimal total price for a rod of length n.
 
-n | r_n
+n | r[n]
 --|----------------
 0 | 0
 1 | 1   (no cuts)
 2 | 5   (no cuts)
 3 | 8   (no cuts)
-4 | 10 = p_2 + p_2
-5 | 13 = p_2 + p_3
+4 | 10 = p[2] + p[2]
+5 | 13 = p[2] + p[3]
 6 | 17  (no cuts)
-7 | 18 = p_1 + p_6
-8 | 22 = p_2 + p_6
+7 | 18 = p[1] + p[6]
+8 | 22 = p[2] + p[6]
 
 
 ### Recursive solution to rod cutting problem
@@ -52,7 +52,7 @@ n | r_n
 For each possible first cut, recursively solve the rest, then take the
 max of the possibilities.
 	  
-    r_n = max_{1≤i≤n} (p_i + r_{n-i})
+    r[n] = max_{1≤i≤n} (p[i] + r[n-i])
 
 We define a class named `CutResult` to store the solution to
 a subproblem. In this case, the location of the cut, the
