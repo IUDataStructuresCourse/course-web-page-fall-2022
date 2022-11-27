@@ -52,7 +52,7 @@ n | r[n]
 For each possible first cut, recursively solve the rest, then take the
 max of the possibilities.
 	  
-    r[n] = max_{1≤i≤n} (p[i] + r[n-i])
+    r[n] = max of (p[i] + r[n-i]) for 1 ≤ i ≤ n
 
 We define a class named `CutResult` to store the solution to
 a subproblem. In this case, the location of the cut, the
@@ -92,26 +92,11 @@ static CutResult cut_rod(int[] P, int n) {
 }
 ```
 
-## Optimal Substructure Property
-
-Recall that a problem has optimal substructure if an optimal solution
-to the problem is based on optimal solutions to subproblems.
-
-1. every solution involves making a choice that leaves
-   one or more subproblems to be solved. e.g., the first-cut choice.
-2. assume that the choice has been made
-3. characterize the space of subproblems
-4. show that using optimal solutions to the subproblems
-  always gives you a better solution for the overall problem
-  then using non-optimal solutions to the subproblems.
-
-Real-life counter example: choosing an outfit to wear in the morning.
-
 ## Pattern for recursive solution to optimal substructure
 
-1. figure out how to identify sub-problems
+1. figure out how to identify subproblems
    e.g., length of remaining rod to cut
-2. base case handles smallest sub-problems
+2. base case handles smallest subproblems
    e.g., rod of length 0
 3. recursive case
 	a) try all possible choices of decomposing current problem into subproblems
@@ -225,7 +210,7 @@ Recall the problem tree for rod cutting:
 Note that problems only depend on subproblems with smaller rod length.
 
 So we can start with rod length 0 (which has no dependencies) and then
-proceed on up in rod lengths.
+proceed to longer rods.
 
 ```
 static int cut_rod_dyn_prog(int[] P, int n) {
@@ -257,7 +242,7 @@ When to apply dynamic programming?
 
 * The problem is an optimization problem, i.e., find the best solution
   among many possible solutions, and
-* optimal substructure, and
+* the problem has optimal substructure, and
 * overlapping subproblems
 	- The total number of subproblems needs to be
 	  small (like polynomial) to make sure the space consumption
