@@ -78,13 +78,13 @@ Nov. 4  | |  | Lab: [Connected Components](./ConnectedComponents/README.md), [su
 Nov. 7  | [Union Find](./lectures/Nov-7.md) | Ch. 8 | Due: [Connected Components](./ConnectedComponents/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/467)
 Nov. 9 | [Minimum Spanning Tree](./lectures/Nov-9.md) | Ch. 9 sec. 5 | 
 Nov. 14 | [Backtracking](./lectures/Nov-14.md)        | Ch. 10 sec. 5 | 
-Nov. 16 | [Greedy Algorithms](./lectures/Nov-16.md) | 
+Nov. 16 | [Greedy Algorithms](./lectures/Nov-16.md) | Ch. 10, sec. 1-2 |
 Nov. 18 | | | Due: [Routing Wires Project](./RoutingWires/README.md), [submit](https://autograder.luddy.indiana.edu/web/project/469)
 Nov. 20 - Nov. 27 | **Thanksgiving Break** | |
-Nov. 28 | [Dynamic Programming](./lectures/Nov-28.md) | | 
-Nov. 30 | DNA Alignment | | [HuffmanCoding](https://iu.instructure.com/courses/2081904/assignments/14231139) [submit test cases](https://autograder.luddy.indiana.edu/web/project/536)
+Nov. 28 | [Dynamic Programming](./lectures/Nov-28.md) | Ch. 10, sec. 3 | 
+Nov. 30 | [DNA Alignment](./lectures/Nov-30.md) | | [HuffmanCoding](https://iu.instructure.com/courses/2081904/assignments/14231139) [submit test cases](https://autograder.luddy.indiana.edu/web/project/536)
 Dec. 2  |  | | Due: [HuffmanCoding](https://iu.instructure.com/courses/2081904/assignments/14231139) [submit](https://autograder.luddy.indiana.edu/web/project/468)
-Dec. 5  | TDB |
+Dec. 5  | Code Review |
 Dec. 7  | Review for Final Exam | 
 Dec. 9  | | | Due: DNA Alignment
 Dec. 12 | **Final Exam** | 5:20-7:20pm in class
