@@ -83,11 +83,11 @@ Nov. 18 | | | Due: [Routing Wires Project](./RoutingWires/README.md), [submit](h
 Nov. 20 - Nov. 27 | **Thanksgiving Break** | |
 Nov. 28 | [Dynamic Programming](./lectures/Nov-28.md) | Ch. 10, sec. 3 | 
 Nov. 30 | [DNA Alignment](./lectures/Nov-30.md) | | [HuffmanCoding](https://iu.instructure.com/courses/2081904/assignments/14231139) [submit test cases](https://autograder.luddy.indiana.edu/web/project/536)
-Dec. 2  |  | | Due: [HuffmanCoding](https://iu.instructure.com/courses/2081904/assignments/14231139) [submit](https://autograder.luddy.indiana.edu/web/project/468)
-Dec. 5  | Code Review |
+Dec. 2  |  |  | Lab: HuffmanCoding
+Dec. 5  | Code Review | Due: [HuffmanCoding](https://iu.instructure.com/courses/2081904/assignments/14231139) [submit](https://autograder.luddy.indiana.edu/web/project/468)
 Dec. 7  | Review for Final Exam | 
-Dec. 9  | | | Due: DNA Alignment
-Dec. 12 | **Final Exam** | 5:20-7:20pm in class
+Dec. 9  | | | Lab: DNA Alignment [submit tests](https://autograder.luddy.indiana.edu/web/project/538)
+Dec. 12 | **Final Exam** | 5:20-7:20pm in class | Due: [DNA Alignment](./DNA_Alignment/README.md) [submit](https://autograder.luddy.indiana.edu/web/project/460)
 
 
 **Resources**
