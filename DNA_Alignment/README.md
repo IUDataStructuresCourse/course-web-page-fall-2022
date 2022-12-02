@@ -45,7 +45,7 @@ Tasks
 -----
 
 The starter code for this assignment is in
-[`DNA_Alignment.zip`](../DNA_Alignment.zip).
+[`DNA_Alignment.zip`](./DNA_Alignment.zip).
 
 There are some tasks for you to complete in the `Judge` class. A Judge
 encapsulates the costs associated with matches, mismatches, and
