@@ -92,6 +92,8 @@ Dec. 12 | **Final Exam** | 5:20-7:20pm in class | Due: [DNA Alignment](./DNA_Ali
 
 **Resources**
 
+* Final Exam with solutions from [2019](./final-2019.pdf) and [2021](./final-2021.pdf).
+
 * [Autograder](https://autograder.luddy.indiana.edu/web/course/39) for
   submitting coding assignments.
 
